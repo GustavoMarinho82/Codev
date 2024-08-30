@@ -1,0 +1,7 @@
+Determinação da progressão geométrica
+1
+Elabore uma função que receba três naturais a, q, n, e retorne
+uma lista com os n primeiros elementos de uma progressão geométrica
+(PG) de razão q e elemento inicial a. 
+
+Ex: se a=1, q=2, n=7, temos que o retorno deve ser [1,2,4,8,16,32,64].

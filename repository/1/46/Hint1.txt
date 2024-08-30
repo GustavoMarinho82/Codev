@@ -1,0 +1,19 @@
+- Se N=1 ou N=2, então o retorno deve ser o valor 1.
+  
+  Caso contrário, podemos calcular os seguintes termos a partir
+  da seguinte lógica:
+  
+  Empregamos uma iteração sobre a variável i = 3,...,N. Em cada 
+  iteração, devemos computar o i-ésimo termo da sequência.
+  
+  Duas variáveis, ult e penult, mantém respectivamente o 
+  último e o penúltimo termo antes do i-ésimo termo. 
+  Inicialmente, com i=3, qual deveria ser o valor dessas variáveis?
+  
+  Como gerar o i-ésimo termo, uma vez conhecidos os valores de ult 
+  e penul?
+  
+  Antes de passar para a próxima iteração, deve-se atualizar 
+  quem são os novos últimos e penúltimos termos da sequência 
+  gerada. Qual deve ser os novos valores dessas variáveis?
+  

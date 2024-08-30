@@ -1,0 +1,14 @@
+Verificar palíndromo
+1
+Escreva uma função que receba um uma cadeia (string) L[0..n-1], 
+e retorne um valor lógico indicando se L é um palíndromo
+(uma cadeia que pode ser lida igualmente do início até o
+final ou vice-versa). Ignore espaços vazios da verificação.
+
+Ex: 
+
+   'raiar',
+   'arara', e
+   'socorram me subi no onibus em marrocos'
+
+são todos palíndromos.

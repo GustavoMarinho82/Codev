@@ -1,0 +1,9 @@
+Calcular resultado do polinômio
+1
+Elabore uma função que receba um inteiro N, um vetor a[0..N] de
+reais, e um valor real k. O vetor a[] representa os coeficientes
+do polinômio f(x) de grau N dado a seguir
+
+f(x) = a[N].x^N + a[N-1].x^(N-1) + … + a[2].x^2 + a[1].x + a[0]
+
+Faça com que a função retorne f(k).

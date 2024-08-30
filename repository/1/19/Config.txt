@@ -1,0 +1,5 @@
+Calcular MMC
+1
+Escreva uma função que receba dois naturais x, y e retorne
+o MMC entre eles. Dica: utilize o fato que
+MDC(a,b) × MMC(a,b) = a × b

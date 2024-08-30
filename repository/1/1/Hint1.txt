@@ -1,17 +1,14 @@
-- Note que é necessário fazer a soma s = 1+2+3+...+n. Essa
-  soma não pode ser escrita com um único comando por envolver
-  um número variável de parcelas, que depende do valor n. 
-  Contudo, pode ser escrita como:
-  
-  s = 0
-  s = s + 1
-  s = s + 2
-  s = s + 3
-  ...
-  s = s + n
+- Na leitura de dados, temos três informações:
 
-  A soma envolvida em cada comando agora possui um número 
-  constante de parcelas, mas o problema é que o número de
-  comandos é que se torna variável com o valor de n. 
+  x = primeiro número lido
+  y = segundo número lido
+  op = caractere com a operação desejada
   
-  Como resolver?
+  Precisamos efetuar algum cálculo com x e y. 
+  
+  O cálculo específico a ser efetuado (soma, subtração, 
+  multiplicação ou divisão) depende de qual condição? 
+  
+  Como separar o programa em casos, de modo que, dependendo
+  de qual condição se verifique, um comando apropriado do 
+  programa, associado a tal condição, deva ser executado?

@@ -1,19 +1,55 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-int Maior(int A[], int n) {
-	/* insert your code here */
+void Reverter(char x[], int n) {
+	int i,j; 
+	for (i = 0, j = n-1; i < j; i++, j--) {
+		char t;
+		t = x[i]; x[i] = x[j]; x[j] = t;
+	}
 }
 
-int main() {
-	int n; 
-	int * A;
-	while (scanf("%d", &n)>0) {
-		A = (int *) malloc(sizeof(int)*n);
-		for (int i=0; i<n; i++) {
-			scanf("%d", &A[i]);
-		} 
-		printf("%d\n", Maior(A, n));
-		free(A);
+char * subtrai_lista(char x[], int nx, char y[], int ny, int & n){
+	/* insert your code here */
+} 
+
+int main(){
+	char * x, * y, * resp;
+	
+	x = (char *) calloc(1000001, sizeof(char));
+	y = (char *) calloc(1000001, sizeof(char));
+	
+	while (scanf("%s", x) > 0) {
+		if (strcmp(x, "@entradagrande1") == 0) {
+			for (int i=0; i<1000000-1; i++) {
+				x[i] = '1'; y[i] = '9';
+			}
+			x[1000000-1] = '1'; x[1000000] = '\0'; y[1000000-1] = '\0'; 
+		} else if (strcmp(x, "@entradagrande2") == 0) {
+			for (int i=0; i<1000000; i++) {
+				x[i] = '1'; y[i] = '1';
+			}
+			x[1000000] = '\0'; y[1000000] = '\0'; 
+		} else {
+			scanf("%s", y);
+		}
+		int nx, ny, n, i, j;
+		nx = strlen(x); ny = strlen(y);
+		
+		Reverter(x, nx); Reverter(y, ny); 
+
+		resp = subtrai_lista(x, nx, y, ny, n);
+		
+		Reverter(resp, n);
+		
+		printf("%s\n", resp);
+
+		free(resp);
 	}
+	free(x);
+	free(y);
+	
+	return 0;
+
 }

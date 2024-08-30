@@ -1,0 +1,6 @@
+Raiz de equação do primeiro grau
+1
+Escreva uma função que receba valores a,b representando os
+coeficientes da equação ax + b = 0, e retorne um valor lógico
+indicando se existe raiz dessa equação. Em caso afirmativo,
+deve retornar também um valor real com tal raiz. 

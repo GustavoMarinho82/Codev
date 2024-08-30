@@ -1,0 +1,10 @@
+- Dada uma matriz de n linhas e m colunas, quais são as dimensões
+  de sua respectiva matriz transposta? Inicialize uma matriz nula 
+  do tamanho correspondende ao da matriz transposta.
+  
+  Uma vez inicializada, devemos percorrer todos os elementos da
+  matriz M, de forma que para cada elemento M[i][j], tenha o seu
+  valor atribuído a um elemento de Mt. Onde deve ser armazenado
+  o valor M[i][j] em Mt?
+
+

@@ -1,0 +1,21 @@
+- A solução a seguinte define duas listas (implementados como vetores), 
+  inicialmente vazias, chamadas digamos caracteres_encontrados e 
+  contagem_caracteres, para armazenar respectivamente os caracteres 
+  distintos encontrados na cadeia de entrada P e o número de ocorrências 
+  de cada um, de modo que contagem_caracteres[i] armazena o número de 
+  ocorrências do caractere caracteres_encontrados[i] lidos em P. Por 
+  exemplo, se a entrada for P = [a,b,c,d,b,d], a ideia é processar cada 
+  caractere de P para produzir:
+
+  caracteres_encontrados = [a,b,c,d]
+  contagem_caracteres = [1,2,1,2]
+  
+  Para cada novo caractere de P processado, verifique se ele já
+  foi encontrado antes. Se não, adicione-o em caracteres_encontrados 
+  associado ao contador de ocorrências 1 em contagem_caracteres. Se
+  ele já havia sido encontrado, incremente o respectivo contador de 
+  ocorrências.
+  
+  Depois que todos os caracteres em P foram processados, como
+  podemos determinar os caracteres únicos?
+  

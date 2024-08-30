@@ -1,17 +1,12 @@
-Número de Fibonacci 
+Divisão de listas
 1
-Escreva uma função que receba um inteiro n≤10^7 e retorne 
-o n-ésimo número da sequência de Fibonacci [O(n)]. 
-O primeiro elemento de tal sequência é o 0, o segundo 
-é o 1, e, para todo i≥3, i-ésimo elemento é obtido 
-pela soma dois dois elementos anteriores da sequência.
+Escreva uma função que receba dois vetores x[0..nx-1], y[0..ny-1], 
+cada um com os algarismos da representação decimal de certo número 
+(x[0],y[0] são os dígitos menos significativos das representações), 
+e retorne dois vetores quociente[0..nq-1] e resto[0..nr-1], cada um 
+com os algarismos da representação decimal dos números que representam: 
+(i) o quociente da divisão de x por y, e (ii) o resto dessa divisão. 
 
-Assim, a sequência (infinita) de Fibonacci é:
-0, 1, 1, 2, 3, 5, 8, 13, 21, ...
-
-Como o n-ésimo número de Fibonacci, para valores elevados
-de n, pode ser muito grande, pede-se que o resultado
-seja expresso módulo 10^9. Para tanto, pode ser útil
-a seguinte propriedade dos módulos:
-
-(a+b) mod c = ((a mod c) + (b mod c)) mod c
+Ex: se x = [5, 9, 8, 7, 3], nx = 5, y = [9, 8], ny = 2, então deve-se
+fazer quociente=[5, 2, 4], nq = 3, resto = [0, 7], nr = 2 (pois 
+37895 / 89 tem quociente 425 e resto 70). 

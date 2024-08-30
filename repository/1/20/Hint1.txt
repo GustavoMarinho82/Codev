@@ -1,0 +1,5 @@
+- Os múltiplos comuns a a,b são precisamente os múltiplos de certo
+  valor especial x. Que valor x é esse?
+  
+- O número de múltiplos de determinado número x que são menores
+  ou iguais a certo valor y é dado por que expressão de x e y?

@@ -1,0 +1,9 @@
+- Dado um número de 4 dígitos, como podemos separá-lo nos dois
+  números especificados no enunciado, o primeiro contendo os dois 
+  primeiros dígitos e o segundo os dois últimos dígitos? 
+
+- Como encontrar cada número de 4 dígitos com a propriedade 
+  especial do enunciado ordenadamente, do menor para o maior?
+
+- Adicione cada número encontrado em uma vetor, e retorne-o ao
+  final da função.

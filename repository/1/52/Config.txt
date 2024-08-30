@@ -1,0 +1,18 @@
+Resolução de sistema
+1
+Elabore uma função que receba um inteiro N, uma matriz
+a[0..N-1, 0..N-1] de reais, e um vetor b[0..N-1] de reais.
+A matriz a[] e o vetor b[] representam o seguinte sistema
+de equações de N variáveis x_0, x_1, …, x_(N-1):
+
+a[0,0].x_0												= b[0]
+a[1,0].x_0 + a[1,1].x_1									= b[1]
+…
+a[i,0].x_0 + a[i,1].x_1 + … + a[i,i].x_i 				= b[i]
+…
+a[N-1,0].x_0 + a[N-1,1].x_1 + … + a[N-1,N-1].x_(N-1)  	= b[N-1]
+
+Faça a função retornar o vetor x[0..N-1] que representa a solução
+do sistema de equações, onde o valor de x[i] corresponde ao valor
+da variável x_i para todo 0 ≤ i < N. Assuma que todos os elementos
+da matriz a[] envolvidos nas equações acima são não nulos.

@@ -1,0 +1,6 @@
+Calcular raiz quadrada [O(log(n))]
+1
+Escreva uma função que receba um valor n e retorna a raiz
+quadrada inteira de n, isto é, o maior natural que é menor ou
+igual à raiz quadrada de n. Ex: n = 27, o retorno deve ser 5.
+[tempo O(log(n))]

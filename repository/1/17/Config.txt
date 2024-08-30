@@ -1,0 +1,18 @@
+Converter para notação científica
+1
+Escreva uma função que receba um valor real n e retorne a notação
+científica de tal número com exatamente uma casa decimal. A notação
+científica converte um número n qualquer em um produto no formato
+
+n = a.bx10^e, onde
+
+a é a parte inteira do número fracionário a.b, tal que 1 <= a <= 9
+b é a parte decimal do número fracionário a.b
+e é um expoente inteiro 
+
+Seguem alguns exemplos (usando b com apenas um dígito):
+
+n = 202      ==>  2.0x10^2
+n = 2.123    ==>  2.1x10^0
+n = 21.23    ==>  2.1x10^1
+n = 0.002123 ==>  2.1x10^-3

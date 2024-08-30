@@ -1,0 +1,20 @@
+- A resolução deste exercício será feita em duas etapas. Primeiro,
+  geraremos a sequência dos N primeiros termos de Fibonacci em uma 
+  lista. Em seguida, está lista será impressa, formatando a resposta
+  da maneira desejada.
+  
+- Para a primeira parte, iniciamos a lista f com os valores [0, 1, 1]. 
+  Os dois 1's correspondem aos dois primeiros termos da sequência. 
+  O primeiro valor 0 serve apenas para que o i-ésimo termo de Fibonacci
+  fique convenientemente armazenado em f[i].
+  
+  Agora, empregamos uma iteração sobre a variável i = 3,...,N. Em cada 
+  iteração, devemos computar o i-ésimo termo da sequência. 
+  Como geramos o i-ésimo termo, uma vez que todos os demais já foram
+  adicionados a f? Guarde esse novo valor em f[i]. 
+  
+- Para a segunda parte, devemos escrever f[1..N] no formato solicitado
+  pelo exercício. Considere empregar dois comandos iterativos: uma para
+  variar a linha de impressão, e outro para controlar o termo de Fibonacci
+  sendo impresso naquela linha.
+

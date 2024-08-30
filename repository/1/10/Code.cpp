@@ -1,18 +1,20 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <math.h>
 
-void RepresentacaoDecimal(long long int n, int R[], int & k) {
+bool eh_Primo(long long int x) {
 	/* insert your code here */
 }
+	
+int main(){
+	long long int x;
 
-int main() {
-	long long int n; 
-	int R[16]; int k;
-	while (scanf("%lld", &n)>0) {
-		RepresentacaoDecimal(n, R, k);
-		for (int i=0; i<k; i++) {
-			printf("%d ", R[i]);
-		}
-		printf("\n");
+	while(scanf("%lld", &x)>0){
+	    if (eh_Primo(x)) {
+			printf("Primo\n");
+	    } else {
+			printf("Composto\n");
+	    }
 	}
+
+	return 0;
 }

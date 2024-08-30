@@ -1,0 +1,5 @@
+- Como podemos testar se um determinado número i é menor ou igual 
+  à raiz quadrada inteira de n?
+  
+  Dentre todos tais valores i que são menores ou iguais à raiz 
+  quadrada inteira de n, como podemos achar o maior deles?

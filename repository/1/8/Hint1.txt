@@ -1,17 +1,16 @@
-- Começando da primeira posição j=0 do vetor,
-  seja c o caractere A[j]. Copie c para A[j+k], 
-  tomando o cuidado que j+k pode ultrapassar o 
-  tamanho n de A, e portanto essa soma deve ser 
-  tomada em módulo n). Seja c o caractere de 
-  A[j+k] que foi substituído e seja j a posição
-  (j+k)%n. Agora, basta repetir o processo, 
-  colocando esse caractere na posição j+k de igual
-  maneira. Esse processo deve se repetir exatamente 
-  n vezes, pois cada caractere deve ser movido 
-  exatamente uma vez.
+- De maneira geral, o algoritmo deve reproduzir o processo de
+  multiplicação manual aprendido na escola. Isto é, devemos
+  considerar os números representados pelas listas x e y dígito
+  a dígito, do menos significativo ao mais signiticativo (unidade,
+  dezena, centena, etc).
   
-- Atente que pode ser que ao executar esse processo,
-  pode-se retornar a posição inicial, antes de se
-  visitar todas as posições. (Pense em um exemplo
-  onde isso ocorre.) O que fazer nesse caso?
+  Para tanto, considere uma iteração sobre uma variável i = 0, 
+  1, ..., ny, cada iteração correspondendo a multiplicação
+  do número x pelo número y[i]. Um exercício anterior pode ajudar
+  a realizar essa multiplicação.
+  
+  Note que cada multplicação dessas produzirá uma parcela do
+  somatório final que ocorre no processo manual da multiplicação.
+  Considere utilizar um outro exercício anterior para acumular o
+  valor das parcelas dessa soma.
   

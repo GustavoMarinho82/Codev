@@ -1,14 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
+#include <string.h>
 
-int QtdePrimos(int n) {
+int contagem(long long int x, int y){
 	/* insert your code here */
 }
 
-int main() {
-	int n;  
-	while (scanf("%d", &n)>0) {
-		printf("%d\n", QtdePrimos(n));
+int main(){
+	long long int x;
+	int y;
+
+	while(scanf("%lld %d", &x, &y) > 0){
+	    printf("%d\n", contagem(x, y));
 	}
+	return 0;
 }

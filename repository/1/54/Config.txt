@@ -1,0 +1,7 @@
+Calcular distância [aceleração geral]
+1
+Escreva uma função que receba a velocidade inicial v0 (em km/h) de
+certo objeto, sua aceleração a (em km/h^2), e real t, e retorne a
+quantidade de quilômetros percorrida por tal objeto após t horas.
+Assuma que a velocidade é um valor não negativo, mas que a
+aceleração é um valor arbitrário.

@@ -1,0 +1,7 @@
+Determinação da progressão aritmética
+1
+Elabore uma função que receba três naturais a, r, n, e retorne
+uma lista com os n primeiros elementos de uma progressão aritmética
+(PA) de razão r e elemento inicial a. 
+
+Ex: se a=1, r=3, n=7, temos que o retorno deve ser [1,4,7,10,13,17,20].

@@ -1,4 +1,5 @@
-Representação gráfica das variáveis
+Contar positivos e negativos
 1
-Elabore um algoritmo cujo estado de memória, ao final, 
-poderia ser representado pela Figura 1.
+Escreva uma função que receba de entrada um vetor lista[0..n-1] 
+de inteiros, e retorne dois inteiros pos, neg, onde pos e neg representam 
+respectivamente a quantidade de inteiros positivos e negativos no vetor.

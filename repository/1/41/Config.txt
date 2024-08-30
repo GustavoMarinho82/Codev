@@ -1,0 +1,10 @@
+Listar matrículas das maiores e menores notas
+1
+Elabore uma função que receba:
+
+- M[0..n-1], uma lista de matrículas de alunos de determinada turma, e 
+- N[0..n-1], uma lista das respectivas notas desses alunos em determinada
+prova. A nota N[i] corresponde ao aluno M[i] para todo 0 ≤ i < |M|.
+
+A funçao deve retornar dois vetores: Maiores[0..r-1], com as matrículas que 
+obtiveram a maior nota, e Menores[0..s-1] com aquelas associadas à menor nota.

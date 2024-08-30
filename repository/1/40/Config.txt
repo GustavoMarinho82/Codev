@@ -1,0 +1,6 @@
+Verificar número perfeito
+1
+Um número é perfeito quando a soma dos seus divisores (exceto o
+próprio número) é igual a ele mesmo. Ex: 28 = 1 + 2 + 4 + 7 + 14
+é perfeito. Elabore uma função que receba um natural n e retorne
+um valor lógico indicando se n é perfeito.

@@ -1,18 +1,16 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-long long int CalculaSoma(int n) {
-	long long int soma = 0;
-	while (n>0) {
-	    soma+=n;
-	    n--;
-	}
-	return soma;
+void doishorarios(int h, int m, char horario1[], char horario2[]) {
+	/* insert your code here */
 }
 
 int main() {
-	int n;
-	while (scanf("%d", &n)>0) {
-		printf("%lld\n", CalculaSoma(n));
+	int h, m; char horario1[6], horario2[6];
+
+	while (scanf("%d", &h)>0) {
+		scanf("%d", &m);
+		doishorarios(h, m, horario1, horario2);
+		printf("%s / %s\n", horario1, horario2);
 	}
+	return 0;
 }

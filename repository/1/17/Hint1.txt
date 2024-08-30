@@ -1,0 +1,8 @@
+- Dado o valor de n, verifique se n < 1. Se sim,
+  verifique quantas multiplicações de n por 10 são
+  necessárias para resultar em um número entre 1 
+  (inclusive) e 10 (exclusive). Veja:
+  
+  n = 0.0013 = 0.013x10 = 0.13x10^2 = 1.3x10^3
+  
+  Se n>1, o raciocínio é similar. 

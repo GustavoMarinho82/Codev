@@ -1,9 +1,8 @@
-Concatenação de Prefixos de Vetores
+Multiplicação de lista por número
 1
-Elabore uma função que receba dois vetores A,B de caracteres, 
-dois inteiros n,m, além de um vetor C, e produza em C o 
-resultado da concatenação dos n primeiros elementos de A com 
-os m primeiros de B. [O(n+m)]
-
-Ex: A = [ 'R','E','S', 'X'], B = ['U','L','T','A','D','O','Y','Z'], 
-n=3, m=6, deve resultar no vetor C = ['R','E','S','U','L','T','A','D','O']
+Escreva uma função que receba um vetor x[0..nx-1] com os algarismos da
+representação decimal de certo número (x[0] é o dígito menos
+significativo da representação), e um natural y entre 0 e 9, e
+retorne um vetor resp[0..n-1] com os algarismos da representação decimal da
+ultiplicação de tais números. Ex: se x = [5, 2, 4], nx = 3, y = 9, então
+deve-se fazer n=4 e retornar [5, 2, 8, 3] (pois 425×9 = 3825). 

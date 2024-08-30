@@ -1,0 +1,5 @@
+- Como podemos calcular o valor da média desta lista?
+
+  Uma vez com o valor da média calculado, como podemos
+  comparar se este valor é maior ou igual a cada um
+  dos valores da lista de notas?

@@ -1,0 +1,4 @@
+Calcular MDC
+1
+Escreva uma função que receba dois naturais x,y e retorne
+o MDC entre eles. 

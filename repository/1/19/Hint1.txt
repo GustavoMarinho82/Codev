@@ -1,0 +1,6 @@
+- Empregue a relação entre MDC e MMC, dada a seguir:
+
+  MDC(a,b) × MMC(a,b) = a × b
+  
+- Como aproveitar a solução do exercício relacionado ao cálculo 
+  do MDC para a solução deste problema?

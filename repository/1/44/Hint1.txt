@@ -1,0 +1,14 @@
+- Considere uma iteração sobre a variável i = 1, 2, ..., N.
+
+  Primeiro, deve inicializar uma variável S responsável por 
+  armazenar a soma parcial da série. Essa variável terá como
+  valor inicial 0.
+  
+  A cada iteração, acumule nessa variável o valor do i-ésimo
+  termo da série. Qual é a expressão desse termo, em função 
+  de i?
+  
+  Ao final, basta retornar o valor da expressão 
+
+  (32*S)^(1/3)
+

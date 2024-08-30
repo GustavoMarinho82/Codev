@@ -1,0 +1,7 @@
+- Podemos contar o número de centavos recebidos com cada tipo de 
+  moeda, e produzir a soma de todas as contagens.
+  
+- Se Q[i] moedas de valor M[i] integram o troco, quantos centavos 
+  no troco há com tal tipo de moeda?
+  
+

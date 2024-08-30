@@ -1,0 +1,22 @@
+Saque no caixa eletrônico
+1
+Elabore uma função que receba uma quantidade S de dinheiro a ser
+sacado em um caixa eletrônico e retorne um vetor de tuplas 
+
+    [(q1,n1),(q2,n2),...,(qk,nk)] 
+    
+representando que deve ser entregue q1 notas de n1 reais, q2 notas 
+de n2 reais, e assim por diante, até certa quantidade k de valor
+de nota. Cada tupla (q,n) é representada por uma estrutura. Dentre 
+todas as possibilidades de se sacar a quantia, deve-se escolher 
+aquela que minimize o número total de notas a serem entregues. 
+
+Assume-se que existam notas de 200, 100, 50, 20, 10, e 5 reais. 
+
+Na resposta, faça com que as tuplas estejam ordenadas
+da maior nota para a menor nota, isto é, n1 > n2 > ... > nk.
+
+Ex: se S = 595, então uma solução seria retornar [(2,200), (1,100),
+(1,50), (2,20), (1,5)], representando 2 notas de 200, 1 de 100,
+1 de 50, 2 de 20, e 1 de 5. Caso não seja possível fazer o saque
+solicitado, uma lista vazia deve ser retornada.

@@ -1,11 +1,13 @@
-- Dado um número n, note que o algarismo das unidades de n
-  corresponde ao resto da divisão de n por 10. O número n' 
-  que representa os demais algarismos (isto é, o número obtido
-  da representação decimal de n pela remoção do algarismo das
-  unidades) é determinado pela divisão inteira de n por 10. 
+- Um número primo é um natural maior que 1 que só é divisível 
+  por 1 e por ele mesmo.
   
-- Como obter agora o algarismo das dezenas de n, sabendo-se o
-  valor de n'?
+  Sendo assim, basta criarmos uma comando de repetição que 
+  verifica o resto das divisões de todos os números de 2 até 
+  certo limite. 
   
-- Como generalizar o raciocínio anterior para obter os demais 
-  algarismos (centena, unidade de milhar, etc.)?
+  Um limite natural seria x-1. Mas na verdade, pode-se apertar
+  bastante esse limite. Qual é o menor limite que podemos usar que
+  possui a seguinte propriedade: caso não haja divisor de x entre 
+  2 e tal limite, então certamente x é primo?
+
+

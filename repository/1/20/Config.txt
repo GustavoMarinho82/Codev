@@ -1,0 +1,5 @@
+Contagem de múltiplos
+1
+Escreva uma função que receba naturais a, b, n e retorne a
+quantidade de múltiplos comuns entre a e b que são menores
+que n. 

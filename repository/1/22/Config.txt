@@ -1,0 +1,6 @@
+Soma de frações
+1
+Escreva uma função que receba duas tuplas (p1,q1), (p2,q2)
+representando duas frações p1/q1 e p2/q2, e retorne uma tupla
+(p',q') representando a fração p'/q' irredutível igual a
+p1/q1 + p2/q2. 

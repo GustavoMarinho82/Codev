@@ -1,12 +1,13 @@
-- Determina-se o valor dezn = 10^n inicialmente. A exponenciação,
-  em C++, é obtida empregando-se a função pow(base,expoente) 
-  acessível através do módulo math.h, que deve ser incluído
-  no programa.
-
-- Deve-se varrer os valores k=1,2,...,dezn e, para cada um,
-  acumular o valor da expressão (-1)^(k+1) / (2k-1). Ao final,
-  a soma acumulada deve ser retornada, multiplicada por 4.
+- De maneira geral, o algoritmo deve reproduzir o processo de
+  soma manual aprendido na escola. Isto é, devemos considerar
+  os números representados pelas listas x e y dígito a dígito,
+  do menos significativo ao mais signiticativo (unidade, dezena,
+  centena, etc). 
   
-- Mas atenção: note que (-1)^(k+1) é sempre +1 ou -1, dependendo
-  do valor de k. Leve isso em conta para computar essa expressão
-  em tempo constante.
+  Para tanto, pode-se utilizar o comando iterativo para iterar
+  sobre cada um dos dígitos. Cada iteração deve produzir um dígito
+  da lista resultante. Quantas iterações serão necessárias?
+  
+  Lembre-se que quando estamos somando dígito a dígito, há a 
+  possibilidade do "vai um", que leva um incremento na soma do
+  próximo para de dígitos.

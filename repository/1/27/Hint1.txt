@@ -1,0 +1,9 @@
+- Para percorrer os caracteres de uma cadeia L, pode-se empregar um
+  comando iterativo que varia uma variavél i entre 0 e n-1. Dentro
+  da iteração, L[i] refere-se ao caractere da cadeia de posição i.
+  
+  Podemos inicializar um vetor L_novo[0..nn-1], com a intenção de receber
+  todos caracteres da nova cadeia. Que valor é apropriado para nn?
+
+  Para cada valor L[i], decidimos se L_novo deve receber uma ou duas
+  cópias de L[i]. Como decidir isso?

@@ -1,0 +1,5 @@
+Remoção de caracteres
+1
+Escreva uma função que receba uma cadeia (string) L[0..n-1], 
+e um caractere c, e modifique a cadeia pela remoção dos 
+caracteres iguais a c.

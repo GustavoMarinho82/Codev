@@ -1,0 +1,5 @@
+Notas maiores que a média
+1
+Escreva uma função que receba uma lista L[0..n-1] das notas de alunos
+de uma turma, e retorne a quantidade delas que estão acima da
+média aritmética dessas notas.

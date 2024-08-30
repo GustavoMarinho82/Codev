@@ -1,0 +1,5 @@
+- Substituindo a coordenad x do ponto na equação da reta, o valor
+  a*x + b é a coordenada y para que o ponto em questão esteja na
+  reta. Qual deve ser a relação entre a*x + b e y para que o ponto
+  esteja acima da reta? E abaixo?
+
