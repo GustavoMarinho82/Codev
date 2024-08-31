@@ -3,7 +3,17 @@
 #include <string.h>
 
 int contagem(long long int x, int y){
-	/* insert your code here */
+    //Jeito sem usar string ou array
+	int apareceu = 0;
+    
+    while(x!=0){
+        if (x%10 == y){
+            apareceu++;
+        }
+        x /= 10;
+    }
+	
+	return apareceu;
 }
 
 int main(){

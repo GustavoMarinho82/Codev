@@ -2,7 +2,13 @@
 #include <math.h>
 
 bool eh_Primo(long long int x) {
-	/* insert your code here */
+    for(int i=2; i<=floor(sqrt(x)); i++){
+        if(x%i==0){
+            return 0; //retorna False
+        }
+    }
+    
+    return (x == 1) ? 0 : 1; //retorna False se x=1, senão retorna True
 }
 	
 int main(){
