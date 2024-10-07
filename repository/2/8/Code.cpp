@@ -2,8 +2,16 @@
 #include <stdlib.h>
 #include <string.h>
 
-void PermutacaoCircular(char A[], int n, int k) {
-	/* insert your code here */
+void PermutacaoCircular(char A[], int n, int k) { //O~[n]
+	//Provavelmente o uso de uma copia de A é desnecessaria
+	char * B;
+	B = (char *) malloc(sizeof(char)*(n+600000));
+	strncpy(B, A, n);
+	
+	for(int i=0; i<n; i++)
+		A[i] = B[(n-k+i)%n];
+	
+	free(B);
 }
 
 int main() {
