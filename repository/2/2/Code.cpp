@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-long long int CalculaSoma(int n) {
+long long int CalculaSoma(long long int n) {
 	return (((1 + n)*n)/2);
 }
 
