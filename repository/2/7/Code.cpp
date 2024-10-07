@@ -1,8 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void ConcatenaPrefixos(char A[], char B[], int n, int m, char C[]) {
-	/* insert your code here */
+void ConcatenaPrefixos(char A[], char B[], int n, int m, char C[]) { //O~[n+m]
+	for(int i=0; i<n; i++) //O~[n]
+		C[i] = A[i];
+	
+	for(int i=0; i<m; i++) //O~[m]
+		C[n+i] = B[i];
 }
 
 int main() {

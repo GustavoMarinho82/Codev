@@ -2,7 +2,8 @@
 #include <stdlib.h>
 
 long long int CalculaSoma(long long int n) {
-	return (((1 + n)*n)/2);
+	//Formula de Progressao Aritmetica
+	return ((1 + n) * n) / 2;
 }
 
 int main() {

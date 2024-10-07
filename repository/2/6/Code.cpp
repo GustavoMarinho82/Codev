@@ -1,8 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int Maior(int A[], int n) {
-	/* insert your code here */
+int Maior(int A[], int n) { //O~[n]
+	int maior = A[0];
+
+	for(int i=1; i<n; i++){ //O~[n]
+		if(A[i] > maior)
+			maior = A[i];
+	}
+
+	return maior;
 }
 
 int main() {
