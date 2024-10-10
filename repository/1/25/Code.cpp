@@ -2,7 +2,14 @@
 #include <string.h>
 
 int contar(char L[], int n, char c) {
-	/* insert your code here */
+	int contador = 0;
+	
+	for(int i=0; i<n; i++){
+		if(L[i] == c)
+			contador++;
+	}
+	
+	return contador;
 }
 
 int main() {

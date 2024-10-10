@@ -1,7 +1,12 @@
 #include <stdio.h>
 
 double raiz(int a, int b, bool & existe) {
-	/* insert your code here */
+	existe = (a == 0) ? false : true;
+	
+	if (existe)
+		return -b/(double)a;
+	else
+		return 0;
 }
 	
 int main() {

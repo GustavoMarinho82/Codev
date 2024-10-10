@@ -2,7 +2,15 @@
 #include <stdlib.h>
 
 void conta_num(int lista[], int n, int & pos, int & neg){
-	/* insert your code here */
+	pos = 0;
+	neg = 0;
+	
+	for(int i = 0; i < n; i++){
+		if(lista[i] > 0)
+			pos++;
+		else if (lista[i] < 0)
+			neg++;
+	}
 }
 
 int main(){
