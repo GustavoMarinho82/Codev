@@ -1,5 +1,0 @@
-Inverter uma cadeia
-1
-Escreva uma função que receba um uma cadeia (string) L[0..n-1], e
-substitua seu conteúdo pela cadeia reversa de L (isto é, a cadeia 
-formada pela leitura de L do fim para o início). 

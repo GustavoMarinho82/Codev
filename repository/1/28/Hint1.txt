@@ -1,8 +1,0 @@
-- Note que uma condição necessária para que uma cadeia seja
-  um palíndromo é que o primeiro e o último caracteres sejam
-  iguais. Além disso, a subcadeia que vai do segundo ao 
-  penúltimo caracteres deve ser, por sua vez, um palíndromo.
-
-- Sempre que um caractere da cadeia sendo avaliada for um
-  espaço, deve-se ignorá-lo.
-  

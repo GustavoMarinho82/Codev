@@ -1,43 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <math.h>
 
-void Reverter(char x[], int n) {
-	int i,j; 
-	for (i = 0, j = n-1; i < j; i++, j--) {
-		char t;
-		t = x[i]; x[i] = x[j]; x[j] = t;
-	}
+void ConcatenaPrefixos(char A[], char B[], int n, int m, char C[]) { //O~[n+m]
+	for(int i=0; i<n; i++) //O~[n]
+		C[i] = A[i];
+	
+	for(int i=0; i<m; i++) //O~[m]
+		C[n+i] = B[i];
 }
 
-char* multiplica_lista(char* x, int nx, int y, int & n) {
-	/* insert your code here */
-}
-
-int main(){
-	char * x, * resp; int y;
-	
-	x = (char *) calloc(1000001, sizeof(char));
-	
-	while (scanf("%s", x) > 0) {
-		scanf("%d", &y);
-		int nx, n;
-
-		nx = strlen(x); 
-		
-		Reverter(x, nx); 
-
-		resp = multiplica_lista(x, nx, y, n);
-		
-		Reverter(resp, n);
-		
-		printf("%s\n", resp);
-
-		free(resp);
+int main() {
+	int n,m; 
+	char A[100]; char B[100]; char C[200];
+	while (scanf("%d %d", &n, &m)>0) {
+		scanf("%s", A);
+		scanf("%s", B);
+		ConcatenaPrefixos(A, B, n, m, C);
+		for (int i=0; i<n+m; i++) {
+			printf("%c", C[i]);
+		}
+		printf("\n");
 	}
-	free(x);
-	
-	return 0;
-
 }

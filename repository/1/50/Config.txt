@@ -1,5 +1,0 @@
-Contagem de cataracteres únicos
-1
-Elabore uma função que receba um inteiro N e um vetor P[0..N-1]
-de caracteres e retorne o número de caracteres de P[] que são
-únicos, isto é, não se repetem em P[].

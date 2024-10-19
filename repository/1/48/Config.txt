@@ -1,5 +1,0 @@
-Calcular fatorial
-1
-Elabore uma função que receba um inteiro N
-e retorne N! (fatorial de N). Lembre-se que:
-N! = N×(N-1)×(N-2)×...×2×1.

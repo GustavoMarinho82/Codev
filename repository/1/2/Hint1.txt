@@ -1,26 +1,9 @@
-- Esse exercício lida com tuplas. 
-
-  Lembre-se que uma variável com uma tupla é criada 
-  fazendo-se, por exemplo,
+- Note que é necessário fazer a soma s = 1+2+3+...+n. 
+  Tente encontrar a fórmula fechada para s, isto é,
+  uma expressão f(n) que seja equivalente a 
+  1+2+3+...+n mas que possua um número constante de
+  termos. 
   
-  var1 = (valor1, valor2, valor3)
-  
-  Dada uma variável var1 representando um tupla, pode-se
-  agora resgatar os valores através de
-  
-  valor1 = var1[0]
-  valor2 = var1[1]
-  valor3 = var1[2]
-  
-  ou, alternativamente, através de
-
-  valor1, valor2, valor3 = var1
-  
-- Esse exercício precisa de formatar um número com 
-  obrigatoriamente dois dígitos. Ex: se a hora a ser
-  apresentada é "9", ela deve ser apresentada como "09".
-  
-- Atenção no caso da hora igual a 12, pois o horário mais
-  cedo a ela associado é o zero hora.
-  
-  
+- Observe que f(n) representa a soma dos n primeiros 
+  termos de uma P.A. (progressão aritmética) com 
+  primeiro termo 1 e razão 1.

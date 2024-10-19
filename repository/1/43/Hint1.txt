@@ -1,9 +1,0 @@
-- Para solucionar este problema, sempre tentaremos utilizar
-  a maior nota disponível na maior quantidade possível. Caso
-  a quantia usando essa maior nota não dê para cobrir totalmente
-  o valor do saque, faz-se procedimento análogo com o valor
-  remanescente, dessa vez considerando a próxima maior nota.
-  
-- Em que caso não será possível fazer o saque com tal conjunto 
-  de notas descrito pelo exercício?
-

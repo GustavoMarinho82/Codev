@@ -1,6 +1,0 @@
-- Como podemos descobrir quais são os divisores de n?
-
-- Uma vez descoberto os divisores, como determinar a soma
-  de todos eles?
-  
-- De posse da soma, como determinar o retorno da função?

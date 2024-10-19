@@ -1,4 +1,0 @@
-- Como é obtida a solução da equação ax + b = 0 ?
-
-  De posse da expressão da raiz, verifique em que 
-  caso essa raiz está indefinida.

@@ -1,27 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <math.h>
 
-int contagem(long long int x, int y){
-    //Jeito sem usar string ou array
-	int apareceu = 0;
-    
-    while(x!=0){
-        if (x%10 == y){
-            apareceu++;
-        }
-        x /= 10;
-    }
+int QtdePrimos(int n) { //O[n*sqrt(n)]
+	int qtd = 0;
 	
-	return apareceu;
+	for(int i=2; i<=n; i++){ //O~[n*sqrt(n)]
+		qtd++;
+		
+		for(int j=2; j<=sqrt(i); j++){ //O[sqrt(n)]
+			if(i%j == 0){
+				qtd--;
+				break;
+			}
+		}
+	}
+	
+	return qtd;
 }
 
-int main(){
-	long long int x;
-	int y;
-
-	while(scanf("%lld %d", &x, &y) > 0){
-	    printf("%d\n", contagem(x, y));
+int main() {
+	int n;  
+	while (scanf("%d", &n)>0) {
+		printf("%d\n", QtdePrimos(n));
 	}
-	return 0;
 }

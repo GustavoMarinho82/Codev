@@ -1,10 +1,9 @@
-Multiplicação de lista por lista
+Permutação circular
 1
-Escreva uma função que receba dois vetores x[0..nx-1], y[0..ny-1], 
-cada um com os algarismos da representação decimal de certo número 
-(x[0],y[0] são os dígitos menos significativos das representações), 
-e retorne um vetor resp[0..n-1] com os algarismos da representação 
-decimal da multiplicação de tais números. 
+Escreva um procedimento que receba um vetor A de caracteres, 
+além de dois inteiros n,k, e gire os n primeiros elementos 
+de A de forma circular em k posições à direita.  [O(n)]
 
-Ex: se x = [5, 2, 4], nx = 3, y = [9, 8], ny = 2, então deve-se fazer 
-n = 5 e o retorno deve ser [5, 2, 8, 7, 3] (pois 425 x 89 = 37825).
+Ex: A = ['R','E','S','U','L','T','A','D','O','X','Y'], n=9, k=3, 
+deve resultar na transformação de A em 
+['A','D','O','R','E','S','U','L','T','X','Y']

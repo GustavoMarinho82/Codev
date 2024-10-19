@@ -1,9 +1,0 @@
-- Lembre que
-
-   p1     p2     p1xp2
-  ---- x ---- = -------
-   q1     q2     q1xq2
-  
-- Como proceder para que o resultado da multiplicação seja
-  irredutível?
-  

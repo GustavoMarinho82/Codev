@@ -1,7 +1,0 @@
-Raiz de equação do segundo grau
-1
-Escreva uma função que receba os valores a,b,c representando os
-coeficientes da equação ax^2 + bx + c = 0, e retorne a quantidade
-de raízes distintas, além de dois valores reais r1,r2 representando 
-as duas possíveis raízes dessa equação. Caso haja apenas uma raiz, 
-ela deverá ser retornada em r1.

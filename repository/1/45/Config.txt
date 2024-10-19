@@ -1,8 +1,0 @@
-Calcular valor da série
-1
-Elabore uma função que receba um inteiro N e retorne
-o valor da série: 
-
-     1       2       3          N-1      N           
-   ----- + ----- + ----- + … + ----- + -----  
-     N      N-1     N-2          2       1

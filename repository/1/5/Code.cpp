@@ -1,50 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include <string.h>
 
-void Reverter(char x[], int n) {
-	int i,j; 
-	for (i = 0, j = n-1; i < j; i++, j--) {
-		char t;
-		t = x[i]; x[i] = x[j]; x[j] = t;
+double ContaMisteriosa(int n) { //O~[10^n]
+	double calculo = 0;
+	double i = 1;
+	double j = 1;
+	
+	/* Não otimizado
+	for(int k=1; k<=pow(10, n); k++)
+		calculo += pow(-1, k+1) / (2*k-1);
+	*/
+	
+	for(long long int k=1; k<=pow(10, n); k++){ //O~[10^n]
+		calculo += i / j;
+		i*= -1;
+		j+= 2;
 	}
+	
+	return 4 * calculo;
 }
 
-char * soma_lista(char x[], int nx, char y[], int ny, int & n) {
-	/* insert your code here */
-}
-
-int main(){
-	char * x, * y, * resp;
-	
-	x = (char *) calloc(1000001, sizeof(char));
-	y = (char *) calloc(1000001, sizeof(char));
-	
-	while (scanf("%s", x) > 0) {
-		if (strcmp(x, "@entradagrande") != 0) {
-			scanf("%s", y);
-		} else {
-			for (int i=0; i<1000000; i++) {
-				x[i] = '9'; y[i] = '9';
-			}
-			x[1000000] = '\0'; y[1000000] = '\0'; 
-		}
-		int nx, ny, n, i, j;
-		nx = strlen(x); ny = strlen(y);
-		
-		Reverter(x, nx); Reverter(y, ny); 
-
-		resp = soma_lista(x, nx, y, ny, n);
-		
-		Reverter(resp, n);
-		
-		printf("%s\n", resp);
-
-		free(resp);
+int main() {
+	int n;  
+	while (scanf("%d", &n)>0) {
+		printf("%.8f\n", ContaMisteriosa(n));
 	}
-	free(x);
-	free(y);
-	
-	return 0;
 }

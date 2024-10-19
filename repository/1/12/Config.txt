@@ -1,15 +1,13 @@
-Conversão de unidades
+Subtração entre representações decimais
 1
-Escreva uma função que converta um valor em certa unidade de
-medida de massa, volume ou distância para outra unidade de medida.
+Escreva uma função que subtraia dois números passados como 
+dois vetores A, B e dois inteiros n,m≤10^3, sabendo-se que 
+os n (resp. m) primeiros elementos do vetor A (resp. B) 
+contém os algarismos do primeiro (resp. segundo) número. 
+O retorno deve consistir de um vetor R com o resultado 
+também como vetor de algarismos, além de uma variável k 
+para indicar o número de algarismos em R. Assuma que o 
+número representado por A é maior ou igual aquele de B. [O(n)]
 
-As unidades de comprimento possíveis são: km, hm, dam, m, dm, cm, mm
-As unidades de massa possíveis são: kg, hg, dag, g, dg, cg, mg
-As unidades de volume possíveis são: kl, hl, dal, l, dl, cl, ml
-
-A função deve receber o valor x a ser convertido, a unidade de
-medida de origem de x, e a unidade de medida para a qual x será
-convertido. Deve ser retornado o valor 0 caso a conversão não
-seja possível.
-
-Assuma que todos os valores de entrada e saída serão números inteiros.
+Ex: se A=[2,4,9], n=3, B=[7,2], m=2, então deve resultar 
+no vetor R=[1,7,7], k=3.

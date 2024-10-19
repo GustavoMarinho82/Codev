@@ -1,7 +1,0 @@
-- Pode-se iterar uma variável i=1,2,...,N. Em cada iteração,
-  acumular em uma variável a multiplicação por i. 
-  
-  Desta forma, a multiplicação acumulada ao fim das iterações será
-  
-  1 x 2 x 3 x ... x N = N!
-  

@@ -1,5 +1,0 @@
-Duplicar vogais
-1
-Escreva uma função que receba uma cadeia (string) L[0..n-1], e retorne
-uma outra cadeia obtida de L pela duplicação de cada vogal.
-Ex: se L = "carro", o retorno deve ser "caarroo".

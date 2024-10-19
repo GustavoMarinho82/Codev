@@ -1,6 +1,0 @@
-- Lembre-se que as raízes (r1,r2) da equação ax^2 + bx + c = 0
-  são dadas por Bhaskara. Quais são as expressões portanto de 
-  r1,r2, em função de a,b,c?
-
-  Observando as expressões, determine a condição para que haja
-  duas raízes, apenas uma raiz, ou nenhuma raiz.

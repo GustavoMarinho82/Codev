@@ -1,9 +1,0 @@
-Comparação de listas
-1
-Escreva uma função que receba dois vetores x[0..nx-1], y[0..ny-1], 
-cada um com os algarismos da representação decimal de certo número 
-(x[0],y[0] são os dígitos menos significativos das representações), 
-e retorne verdadeiro se o número representado por x é maior ou igual 
-àquele representado por y, ou falso caso contrário. 
-Ex: se x = [5, 1, 8], nx=3, y = [9, 9, 1], ny=3, então o retorno deve 
-ser verdadeiro (pois 815 >= 199). 

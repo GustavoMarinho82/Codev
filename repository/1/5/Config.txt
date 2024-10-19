@@ -1,12 +1,4 @@
-Soma de listas
-1
-Escreva uma função que receba dois vetores x[0..nx-1], y[0..ny-1], 
-cada uma com os algarismos da representação decimal de certo número 
-(x[0], y[0] são os dígitos menos significativos das representações), 
-e retorne um vetor resp[0..n-1] com os algarismos da representação 
-decimal da soma de tais números. 
-
-Ex: se x = [8,5,9]; nx=3   (representando o número 958)
-       y = [2,1,8]; ny=3   (representando o número 812)
-    então o vetor retornado deve ser
-           [0,7,7,1]; n=4 (representando o número 1770)
+Conta misteriosa
+2
+Escreva uma função que retorne, dado um inteiro n, o valor da expressão:
+  4 × ∑ { (-1)^(k+1) / (2k-1) : k = 1,2,...,10^n }. [O(10^n)]

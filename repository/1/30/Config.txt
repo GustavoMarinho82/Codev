@@ -1,4 +1,0 @@
-Verificar subcadeia
-1
-Escreva uma função que receba um duas cadeias (strings) L, S, e
-retorne um valor lógico indicando se S é uma subcadeia de L. 

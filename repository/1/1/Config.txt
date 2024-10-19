@@ -1,5 +1,4 @@
-Operação aritmética
+Soma de 1 a n [O(n)]
 1
-Escreva uma função que, dados dois números x, y, e uma operação 
-op (op ∈ {"+", "-", "/", "x"}), retorne o resultado "x op y". 
-Ex: se x = 9, y = 2, op = "/", deve-se retornar o valor 4.5.
+Escreva uma função que receba como entrada um número n 
+e retorne a soma dos números 1 a n. [O(n)]

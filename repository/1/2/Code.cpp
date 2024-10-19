@@ -1,16 +1,14 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-void doishorarios(int h, int m, char horario1[], char horario2[]) {
-	/* insert your code here */
+long long int CalculaSoma(long long int n) {
+	//Formula de Progressao Aritmetica
+	return ((1 + n) * n) / 2;
 }
 
 int main() {
-	int h, m; char horario1[6], horario2[6];
-
-	while (scanf("%d", &h)>0) {
-		scanf("%d", &m);
-		doishorarios(h, m, horario1, horario2);
-		printf("%s / %s\n", horario1, horario2);
+	int n;
+	while (scanf("%d", &n)>0) {
+		printf("%lld\n", CalculaSoma(n));
 	}
-	return 0;
 }

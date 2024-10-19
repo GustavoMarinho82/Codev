@@ -1,8 +1,0 @@
-- Considere uma variável que armazenará o valor do polinômio.
-  
-  Considere uma iteração sobre uma variável i=0,1,...,N.
-  A cada iteração, deve-se acumular na variável a expressão
-  do polinômio de grau i. Qual é essa expressão?
-  
-  Ao final, basta retornar esse somatório acumulado como
-  resposta.

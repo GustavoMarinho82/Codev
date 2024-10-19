@@ -1,3 +1,0 @@
-- Qual o divisor comum ao numerador e ao denominador que, ao
-  dividí-los por tal número, obtemos a fração irredutível
-  diretamente, sem mais simplificações?

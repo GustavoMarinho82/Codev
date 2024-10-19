@@ -1,6 +1,0 @@
-- Para percorrer os caracteres de uma cadeia L, pode-se empregar um
-  comando iterativo que varia uma variavél i entre 0 e n-1. Dentro
-  da iteração, L[i] refere-se ao i-ésimo caractere da cadeia.
-  
-  Como realizar a contagem dos caracteres da cadeia que
-  correspondem a c?

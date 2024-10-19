@@ -1,4 +1,0 @@
-Representação gráfica das variáveis
-1
-Elabore um algoritmo cujo estado de memória, ao final, 
-poderia ser representado pela Figura 1.

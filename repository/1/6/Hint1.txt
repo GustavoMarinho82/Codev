@@ -1,13 +1,5 @@
-- De maneira geral, o algoritmo deve reproduzir o processo de
-  subtração manual aprendido na escola. Isto é, devemos
-  considerar os números representados pelas listas x e y dígito
-  a dígito, do menos significativo ao mais signiticativo (unidade,
-  dezena, centena, etc).
-
-  Para tanto, pode-se utilizar o comando iterativo para produzir
-  cada dígito do resultado. Quantas iterações serão necessárias?
-  
-  Lembre-se que, ao subtrair dígito a dígito, talvez seja necessário
-  "pegar emprestado" uma dezena de unidades da próxima "casa" da 
-  representação.
-  
+- Pode-se supor inicialmente o maior número igual ao primeiro
+  elemento, e colocá-lo na variável "maior". Em seguida, varre-se 
+  os demais elementos entre os n primeiros de A, e ao encontrar um 
+  elemento maior que aquele em "maior", atualiza-se essa variável
+  com esse elemento.

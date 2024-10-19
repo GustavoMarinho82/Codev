@@ -1,7 +1,0 @@
-Ângulo entre ponteiros
-1
-Elabore uma função que, dado um horário do dia H:M (H 
-representando as horas, M os minutos), retorne o menor ângulo 
-(em graus) entre os ponteiros de um relógio que indique 
-precisamente esse horário. Ex: se H=3, M=0, então o
-retorno deve ser 90. Assuma 1 ≤ H ≤ 12, 0 ≤ M ≤ 59.

@@ -1,9 +1,0 @@
-Posição do ponto em relação à reta
-1
-Elabore uma função que receba dois valores a,b representando a
-equação y = ax + b de uma reta no plano cartesiano, além de um
-tupla (x,y) representando as coordenadas de um ponto do plano,
-e retorne ">" se tal ponto está acima da reta, "-" se o ponto
-estiver sobre a reta, e "<" se ele estiver abaixo da reta. Para
-evitar problemas de precisão numérica, assuma que o ponto está
-na reta se |y - (ax+b)| <= 0,00001.

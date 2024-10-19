@@ -1,26 +1,11 @@
-- De maneira geral, o algoritmo deve reproduzir o processo de
-  divisão manual aprendido na escola, descrito a seguir. 
+- Pode-se varrer i=1,2,...,n e, para cada i,
+  determinar o valor do i-ésimo Fibonacci. Dessa forma,
+  ao final do processo, o n-ésimo Fibonacci estaria
+  computado e poderia ser retornado.
+  
+- Para computar o valor do i-ésimo Fibonacci f, é necessário
+  guardar certas informações de iterações passadas. Quais
+  são elas?
 
-  No processo da divisão, além de x,y, há duas grandezas a
-  serem mantidas: o resto e o quociente. Esses números serão
-  representados por listas, inicialmente vazias.
   
-  Cada iteração deve produzir um novo algarismo no quociente.
-  Esse novo algarismo será o menos significativo dentre os 
-  já existentes no quociente. Ele é produzido da seguinte
-  maneira. 
   
-  Em primeiro lugar, acrescenta-se no resto o próximo algarismo
-  ainda não processado do dividendo. Esse novo algarismo será o
-  menos significativo dentre os já existentes no resto. Em seguida,
-  itera-se sobre uma variável j=1,...,10. Para cada valor de j,
-  computa-se y x j (para tanto, emprega-se o algoritmo de 
-  multiplicação de lista por número) e verifica-se se o resto
-  se tornou menor que y x j. Assim que isso ocorrer, qual o 
-  algarismo a ser inserido no quociente?
-  
-  Após fazer tal inserção, como atualiza-se o resto?
-  
-  O processo se repete até que todos os algarismos do dividendo 
-  tenham sido processados. 
- 

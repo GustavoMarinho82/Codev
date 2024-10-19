@@ -1,9 +1,0 @@
-- A ideia é comparar os dígitos mais significativos de x, y, 
-  de mesma posição, e o maior número será aquele que possuir 
-  o maior dentre tais dígitos. No caso de empate, a decisão
-  é feita no próximo algarismo mais significativo. Se novo
-  empate ocorrer, o desempate é feita no próximo algarismos
-  mais significativo, e assim por diante. Se todos os algarismos
-  forem iguais, então a resposta é verdadeiro.
-  
-

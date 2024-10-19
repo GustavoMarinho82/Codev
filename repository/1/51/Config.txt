@@ -1,9 +1,0 @@
-Multiplicação de matrizes
-1
-Elabore uma função que receba inteiros R,S,T e duas matrizes
-M1[0..R-1, 0..S-1] e M2[0..S-1, 0..T-1] de inteiros e retorne
-uma matriz MR[0..R-1, 0..T-1] com o resultado da multiplicação
-de M1 por M2, isto é, MR = M1 × M2. Lembre-se que:
-
-MR[i,j] = ∑ { M1[i,k] × M2[k,j] | 0 ≤ k < S }
-para todo  0 ≤ i < R, 0 ≤ j < T

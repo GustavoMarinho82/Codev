@@ -1,0 +1,6 @@
+EXERCÍCIOS DE FUNDAMENTOS:
+Exercícios em C/C++: codevisfun
+
+EXERCÍCIOS DE AED1:
+Variáveis: jafiztudo
+Listas Lineares: jafizeconferitudo

@@ -1,15 +1,4 @@
-Formatação de hora
+Soma de 1 a n [O(1)]
 1
-Escreva uma função que receba uma dois números h, m, 
-representando os números apontados pelos ponteiros 
-respectivamente de hora e minuto de um relógio dividido em
-números de 1 a 12, e retorne os dois possíveis horários para 
-aquele dia, começando do mais cedo. Cada possível horário deve 
-estar em formato de cadeia (string), com o texto final formatado 
-corretamente para apresentação na tela. Os dois horários devem
-ser escritos no vetor de caracteres horario1 e horario2.
-
-Ex: se (h,m) = (9,1), então deve-se fazer
-
-horario1 = "09:05" = ['0', '9', ':', '0', '5', '\0']
-horario2 = "21:05" = ['2', '1', ':', '0', '5', '\0']
+Escreva uma função que receba como entrada um número n 
+e retorne a soma dos números 1 a n. [O(1)]

@@ -1,11 +1,8 @@
-- De maneira geral, o algoritmo deve reproduzir o processo de
-  multiplicação manual aprendido na escola. Isto é, devemos
-  considerar os números representados pelas listas x e y dígito
-  a dígito, do menos significativo ao mais signiticativo (unidade,
-  dezena, centena, etc).
-
-  Para tanto, pode-se utilizar o comando iterativo, cada iteração
-  responsável por produzir mais um dígito da resposta. Logo, o número 
-  de iterações deve ser igual ao comprimento do maior número mais uma 
-  unidade, que é o maior número possível da resposta. 
-
+- Ao final, deve-se ter 
+  * C[0..n-1] = A[0..n-1] e 
+  * C[n..n+m-1] = B[0..m-1]
+  
+- Para tanto, copie os elementos A[0..n-1] e B[0..m-1]
+  para as porções indicadas acima de C[0..n+m-1]. Dois
+  comandos iterativos, um em sequência ao outro, podem
+  ser empregados para isso.

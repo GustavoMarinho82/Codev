@@ -1,26 +1,25 @@
 #include <stdio.h>
 #include <math.h>
 
-bool eh_Primo(long long int x) {
-    for(int i=2; i<=floor(sqrt(x)); i++){
-        if(x%i==0){
-            return 0; //retorna False
-        }
-    }
-    
-    return (x == 1) ? 0 : 1; //retorna False se x=1, senão retorna True
-}
+void RepresentacaoDecimal(long long int n, int R[], int & k) {
+	k = (n !=0) ? floor(log10(n))+1 : 1;
 	
-int main(){
-	long long int x;
-
-	while(scanf("%lld", &x)>0){
-	    if (eh_Primo(x)) {
-			printf("Primo\n");
-	    } else {
-			printf("Composto\n");
-	    }
+	char numero[k];
+	sprintf(numero, "%lld", n);
+	
+	for(int i=0; i<k; i++){
+		R[i] = numero[i] - '0';
 	}
+}
 
-	return 0;
+int main() {
+	long long int n; 
+	int R[16]; int k;
+	while (scanf("%lld", &n)>0) {
+		RepresentacaoDecimal(n, R, k);
+		for (int i=0; i<k; i++) {
+			printf("%d ", R[i]);
+		}
+		printf("\n");
+	}
 }
