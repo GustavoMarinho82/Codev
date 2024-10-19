@@ -1,8 +1,15 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <math.h>
 
 void RepresentacaoDecimal(long long int n, int R[], int & k) {
-	/* insert your code here */
+	k = (n !=0) ? floor(log10(n))+1 : 1;
+	
+	char numero[k];
+	sprintf(numero, "%lld", n);
+	
+	for(int i=0; i<k; i++){
+		R[i] = numero[i] - '0';
+	}
 }
 
 int main() {
