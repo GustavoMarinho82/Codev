@@ -8,40 +8,35 @@ void Imprime(int R[], int k) {
 	printf("\n");
 }
 
-void Inverter(int V[], int k){ //k = tamanho do vetor
-	for(int i=0; i<(k/2); i++){
-		int aux = V[i];
-		V[i] = V[k-i-1];
-		V[k-i-1] = aux;
+void Inverte(int R[], int k) {
+	for (int i=0; i<k/2; i++) {
+		int t = R[i];
+		R[i] = R[k-1-i];
+		R[k-1-i] = t;
 	}
 }
 
 void Soma(int A[], int n, int B[], int m, int R[], int &k) {
-	Inverter(A, n); Inverter(B, m);
-	
+	Inverte(A,n); Inverte(B,m); /*mais fácil fazer a operação com os vetores em ordem inversa */ 
 	k = 0;
-	int sobra = 0;
-
-	while(k < n || k < m || sobra == 1){
-		R[k] = sobra;
-		sobra = 0;
-		
-		if(k < n)
-			R[k] += A[k];
-		
-		if(k < m)
-			R[k] += B[k];
-		
-		if(R[k] >= 10){
-			R[k] -= 10;
-			sobra = 1;
+	int vaium = 0;
+	while ((k<n) || (k<m) || (vaium == 1)) {
+		int a, b; a=0; b=0;
+		//printf("k=%d; n=%d m=%d\n", k, n, m);
+		if (k<n) {
+			a = A[k];
 		}
-		
-		k++;
+		if (k<m) {
+			b = B[k];
+		}
+		//printf("a=%d; b=%d;vaium=%d\n", a, b, vaium);
+		R[k] = (a+b+vaium)%10;
+		vaium = (a+b+vaium)/10;
+		k = k+1;
 	}
-
-	Inverter(A, n); Inverter(B, m); Inverter(R, k);
+	Inverte(A,n); Inverte(B,m); Inverte(R,k); 
 }
+
 
 int main() {
 	int n, m; 
@@ -57,7 +52,6 @@ int main() {
 		for (int i=0; i<m; i++) {
 			scanf("%d", &B[i]);
 		}
-		
 		Soma(A, n, B, m, R, k);  Imprime(R, k);
 	}
 	free(A); free(B); free(R);

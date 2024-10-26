@@ -8,8 +8,41 @@ void Imprime(int R[], int k) {
 	printf("\n");
 }
 
-void Subtrai(int A[], int n, int B[], int m, int R[], int &k) {
-	/* insert your code here */
+void Inverter(int V[], int k){ //k = tamanho do vetor
+	for(int i=0; i<(k/2); i++){
+		int aux = V[i];
+		V[i] = V[k-i-1];
+		V[k-i-1] = aux;
+	}
+}
+
+void Subtrai(int A[], int n, int B[], int m, int R[], int &k) { //Considera que A >= B
+	Inverter(A, n); Inverter(B, m);
+	
+	int debito = 0;
+
+	for(k = 0; k<n; k++){ //O~(n)
+		R[k] = A[k] - debito; 
+		debito = 0;
+		
+		if(k < m)
+			R[k] -= B[k];
+		
+		if(R[k] < 0){
+			R[k] += 10;
+			debito = 1;
+		}
+	}
+
+	for(int i=k-1; i>=0; i--){ //O(n)
+		if(R[i] == 0)
+			k--;
+		else
+			break;
+	}
+	
+	Inverter(A, n); Inverter(B, m); Inverter(R, k);
+
 }
 
 int main() {
