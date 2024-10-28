@@ -2,36 +2,27 @@
 #include <stdlib.h>
 #include <bits/stdc++.h>
 
-long long int ParesIguais(int A[], int B[], int n) { //O~(n)
-	int i=0, j=0; 
-	long long int pi = 0;
-	
-	while ((i<n) && (j<n)) { //O~(n)
-		if(A[i] < B[j])
-			i++;
-		
-		else if (A[i] > B[j])
-			j++;
-		
-		else /*A[i] == B[j]*/ {
-			int k = A[i];
-			long long int kA = 0, kB = 0; //kA = numeros de elementos k em A | 
-			// kA e kB tem que ser long long por causa da multiplicação de (pi += kA * kB), senão pode dar overflow
-
-			while((A[i] == k) && (i<n)){ //(i<n) evita que k seja comparado com lixo, o que poderia causar um falso verdadeiro
-				kA++;
-				i++;
+long long int ParesIguais(int A[], int B[], int n) {
+	int i=0; int j=0; long long int t = 0;
+	while ((i<n) && (j<n)) {
+		if (A[i] < B[j]) {
+			i = i+1; 
+		} else if (A[i] > B[j]) {
+			j = j+1; 
+		} else {
+			long long int qa = 0; long long int qb = 0; int k = A[i];
+			while ((i<n) && (A[i] == k)) {
+				qa = qa+1;
+				i = i+1;
 			}
-			while((B[j] == k) && (j<n)){
-				kB++;
-				j++;
+			while ((j<n) && (B[j] == k)) {
+				qb = qb+1;
+				j = j+1;
 			}
-			
-			pi += kA * kB;
+			t = t + qa*qb;
 		}
 	}
-	
-	return pi;
+	return t;
 }
 
 void Insere(int L[], int &n, int e) {

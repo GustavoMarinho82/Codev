@@ -1,21 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 bool Busca(int **B, int n, int x) {
-	int i=0, j=(n-1);
-	
-	while((i < n) && (j >= 0)){
-		if (B[i][j] == x)
+	int i=0; int j=n-1;
+	while ((i<n) && (j>=0)) {
+		if (B[i][j] == x) {
 			return true;
-		
-		else if(B[i][j] > x)
-			j--;
-		
-		else
-			i++;
+		} else if (B[i][j] < x) { 
+			i = i+1;
+		} else {
+			j = j-1;
+		}
 	}
-	
 	return false;
 }
 
@@ -33,9 +29,10 @@ bool C_Busca(int **B, int n, int x, int q=1) {
 	return r;
 }
 
-int main() {
+
+int main() {	
 	setbuf(stdout, NULL); setbuf(stderr, NULL);
-	int n; int ** B; 
+    int n; int ** B; 
 	while (scanf("%d", &n)>0) {
 		if (n>-1) {
 			/* lê n, B, x */
@@ -98,7 +95,7 @@ int main() {
 					printf("%d\n", C_Busca(B,n,2)); 
 				} else {
 					printf("%d\n", C_Busca(B,n,0)); 
-					C_Busca(B,n,0,10);
+					C_Busca(B,n,0,1000);
 				}
 			}
 			for (int i=0; i<n; i++) {

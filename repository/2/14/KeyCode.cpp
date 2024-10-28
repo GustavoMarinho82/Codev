@@ -1,21 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+bool BuscaBinaria(int * V, int n, int x) {
+	int i=0; int j=n-1;
+	while (i<=j) {
+		int m = (i+j)/2;
+		if (V[m] == x) {
+			return true;
+		} else if (V[m] > x) {
+			j = m-1;
+		} else {
+			i = m+1;
+		}
+	}
+	return false;
+}
 
 bool Busca(int **B, int n, int x) {
-	int i=0, j=(n-1);
-	
-	while((i < n) && (j >= 0)){
-		if (B[i][j] == x)
+	for (int i=0; i<n; i++) {
+		if (BuscaBinaria(B[i],n,x)) {
 			return true;
-		
-		else if(B[i][j] > x)
-			j--;
-		
-		else
-			i++;
+		}		
 	}
-	
 	return false;
 }
 

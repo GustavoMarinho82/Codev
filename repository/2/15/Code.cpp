@@ -2,7 +2,20 @@
 #include <stdlib.h>
 
 bool Busca(int **B, int n, int x) {
-	/* insert your code here */
+	int i=0, j=(n-1);
+	
+	while((i < n) && (j >= 0)){
+		if (B[i][j] == x)
+			return true;
+		
+		else if(B[i][j] > x)
+			j--;
+		
+		else
+			i++;
+	}
+	
+	return false;
 }
 
 bool C_Busca(int **B, int n, int x, int q=1) {
