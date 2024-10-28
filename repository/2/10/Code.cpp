@@ -12,7 +12,16 @@ void Insere(No * &L, int e) {
 }
 
 No * Inverte(No * L) {
-	/* insert your code here */
+	No* L2 = NULL;
+	No* p1 = L;
+	
+	while(p1 != NULL){
+		Insere(L2, (p1->E));
+		
+		p1 = p1->Prox;
+	}
+	
+	return L2;
 }
 
 No * C_Inverte(No * L, int q=1) {

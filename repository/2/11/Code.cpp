@@ -6,8 +6,24 @@ typedef struct No {
 	No * Prox;
 } No;
 
-void Remove(No * &L, No * p) {
-	/* insert your code here */
+void Remove(No * &L, No * p) { //O(N)
+	if (L == p){
+		L = p->Prox;
+		free(p);
+	
+	} else {
+		No* pAnt = L;
+		
+		while(pAnt != NULL){ //O(N)
+			if (pAnt->Prox == p){
+				pAnt->Prox = p->Prox;
+				free(p);
+				break;
+			}
+			
+			pAnt = pAnt->Prox;
+		}
+	}
 }
 
 void C_Remove(No * &L, No * p, int q=1) {

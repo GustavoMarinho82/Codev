@@ -12,17 +12,17 @@ void Insere(No * &L, int e) {
 	novo->E = e; novo->Prox = L; L = novo; 
 }
 
-No * SemRepeticoes(No * L) {
+No * SemRepeticoes(No * L) { //O(N^2)
 	No* L2 = NULL;
 	No* p1 = L; //p1 percorre a lista L
 	
-	while(p1 != NULL){
+	while(p1 != NULL){ //O(N^2) 
 		No* p2 = L2; //p2 percorre a lista L2
 		int repetido = 0;
 		
-		while(p2 != NULL){
+		while(p2 != NULL){ //O(N)
 			if(p1->E == p2->E){
-				repetido == 1;
+				repetido = 1;
 				break;
 			}
 			

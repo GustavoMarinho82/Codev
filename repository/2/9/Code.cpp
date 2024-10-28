@@ -12,8 +12,27 @@ void Insere(No * &L, int e) {
 	novo->E = e; novo->Prox = L; L = novo; 
 }
 
-No * Soma2a2(No * L) {
-	/* insert your code here */
+No * Soma2a2(No * L) { //O(N^2)
+	No* L2 = NULL;
+	No* p1 = L;
+	
+	while(p1 != NULL){ //O(N^2)
+		No* p2 = p1->Prox;
+		
+		while(p2 != NULL){ //O(N)
+			No* pTemp = (No*) malloc(sizeof(No));
+			
+			pTemp->E = (p1->E + p2->E);
+			pTemp->Prox = L2;
+			L2 = pTemp;
+			
+			p2 = p2->Prox;
+		}
+		
+		p1 = p1->Prox;
+	}
+	
+	return L2;
 }
 
 No * C_Soma2a2(No * L, int q=1) {
