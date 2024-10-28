@@ -7,20 +7,23 @@ typedef struct No {
 	No * Prox;
 } No;
 
-int KUltimo(No * L, int k) { //O(k-1)
-	if(L == NULL)
+int KUltimo(No * L, int k) {
+	if (L == NULL) {
 		return -1;
-	
-	No* p = L->Ant;
-	
-	for(int i=0; i<(k-1); i++){ //O(k-1)
-		if(p == L)
+	} else {
+		No * p = L; int n=1;
+		for (int i=1; i<=k; i++) {
+			p = p->Ant; n = n+1;
+			if (p == L) {
+				break;
+			}
+		}
+		if (n < k) {
 			return -1;
-		
-		p = p->Ant;
+		} else {
+			return p->E;
+		}
 	}
-	
-	return p->E;
 }
 
 void Insere(No * &L, int e) {

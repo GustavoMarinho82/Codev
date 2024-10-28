@@ -2,12 +2,14 @@
 #include <stdlib.h>
 #include <bits/stdc++.h>
 
-void RemoveMaiores(int L[], int &n, int k) { //O~(N)
-	for(int i=0; i<n; i++){ //O~(N) | N-> n de elementos da lista
-		if(L[i] > k){
-			L[i] = L[n-1];
-			n--;
-			i--;
+void RemoveMaiores(int L[], int &n, int k) {
+	int i=0; 
+	while (i<n) {
+		if (L[i]>k) {
+			L[i] = L[n-1]; 
+			n = n-1;
+		} else {
+			i = i+1; 
 		}
 	}
 }

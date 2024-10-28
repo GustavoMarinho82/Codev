@@ -13,7 +13,34 @@ void Insere(No * &L, int e) {
 }
 
 No * SemRepeticoes(No * L) {
-	/* insert your code here */
+	No* L2 = NULL;
+	No* p1 = L; //p1 percorre a lista L
+	
+	while(p1 != NULL){
+		No* p2 = L2; //p2 percorre a lista L2
+		int repetido = 0;
+		
+		while(p2 != NULL){
+			if(p1->E == p2->E){
+				repetido == 1;
+				break;
+			}
+			
+			p2 = p2->Prox;
+		}
+		
+		if(repetido == 0){
+			No* pTemp = (No*) malloc(sizeof(No));
+			
+			pTemp->E = p1->E;
+			pTemp->Prox = L2;
+			L2 = pTemp;
+		}
+		
+		p1 = p1->Prox;
+	}
+	
+	return L2;
 }
 
 No * C_SemRepeticoes(No * L, int q=1) {

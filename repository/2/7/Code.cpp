@@ -8,8 +8,28 @@ typedef struct No {
 } No;
 
 
-void RemoveMaiores(No * &L, int k) {
-	/* insert your code here */
+void RemoveMaiores(No * &L, int k) { //O~(N)
+	No* p = L;
+	No* pAnt = NULL;
+	
+	while(p != NULL){ //O~(N) | N-> n de elementos da lista
+		if(p->E > k){
+			if(pAnt == NULL){
+				L = p->Prox;
+				free(p);
+				p = L;
+				
+			} else {
+				pAnt->Prox = p->Prox;
+				free(p);
+				p = pAnt->Prox;
+			}
+			
+		} else {
+			pAnt = p;
+			p = p->Prox;
+		}
+	}
 }
 
 void C_RemoveMaiores(No * &L, int k, int q=1) {

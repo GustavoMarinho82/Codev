@@ -6,23 +6,26 @@ typedef struct No {
 	No * Prox;
 } No;
 
-int KUltimo(No * L, int k) { //O~(N)
-	No* pkUltimo = L;
-	No* p = L->Prox;
-	int n = 1;
-	
-	while(p != L){ //O~(N) | N-> n de elementos da lista
-		if(n >= k)
-			pkUltimo = pkUltimo->Prox;
-		
+int KUltimo(No * L, int k) {
+	No * pKUlt = NULL; 
+	No * p = L->Prox;
+	int n=0;
+	while (p != L)  {
+		n = n+1;
+		if (n >= k) { //andar com o ponteiro do k-último
+			if (pKUlt == NULL) {
+				pKUlt = L->Prox;
+			} else {
+				pKUlt = pKUlt->Prox;
+			}
+		}
 		p = p->Prox;
-		n++;
 	}
-	
-	if(pkUltimo == L)
+	if (pKUlt == NULL) {
 		return -1;
-	else
-		return pkUltimo->E;
+	} else {
+		return pKUlt->E;
+	}
 }
 
 void Constroi(No * &L, No * &u) {

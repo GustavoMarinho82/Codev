@@ -6,8 +6,20 @@ typedef struct No {
 	No * Prox;
 } No;
 
-int Ultimo(No * L) {
-	/* insert your code here */
+int Ultimo(No * L) { //O~(N-1)
+	if(L == NULL)
+		return -1;
+	
+	int n = 0;
+	No* pAnterior = L;
+	No* p = L->Prox;
+	
+	while(p != L){ //O~(N-1) | N-> numero de elementos da lista
+		pAnterior = p;
+		p = p->Prox;
+	}
+	
+	return pAnterior->E;
 }
 
 void Insere(No * &L, int e, No * &u) {
