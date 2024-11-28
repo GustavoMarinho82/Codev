@@ -6,3 +6,4 @@ Variáveis: jafiztudo
 Listas Lineares: jafizeconferitudo
 Recursão: baseecasogeral
 Árvores: mangueira
+Pilhas e Filas: pilhaalcalina
