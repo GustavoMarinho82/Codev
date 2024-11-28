@@ -1,17 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-bool EhPalindromo2(char C[], int i, int f) { //O~(f)
-	if (i >= f) {
+bool EhPalindromo(char C[], int i, int j) {
+	if (i>=j) {
 		return true;
-	
 	} else {
-		return EhPalindromo2(C, i+1, f-1) && (C[i] == C[f]);
+		return (C[i]==C[j]) && (EhPalindromo(C,i+1,j-1));
 	}
 }
 
-bool EhPalindromo(char C[], int n) { //O~(n)
-	return EhPalindromo2(C, 0, n-1);
+bool EhPalindromo(char C[], int n) {
+	return EhPalindromo(C, 0, n-1);
 }
 
 int main() {

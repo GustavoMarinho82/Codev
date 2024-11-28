@@ -1,24 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int RaizQuad2(int n, int r){ //O(n)
-	if ((r*r <= n) && (n < (r+1)*(r+1))) {
-		return r;
-	
+int RaizQuad(int n, int i, int f) {
+	// assume n >= 0, i <= ⌊√(n)⌋ < f
+	// retorna ⌊√(n)⌋
+	if (i+1==f) {
+		return i;
 	} else {
-		return RaizQuad2(n, r+1);
+		long long int m = (i+f)/2;
+		if (m*m <= n) {
+			return RaizQuad(n, m, f);
+		} else {
+			return RaizQuad(n, i, m);
+		}
 	}
 }
 
-int RaizQuad(int n) { //O(n)
+int RaizQuad(int n) {
 	// assume n >= 0
-	// retorna r tal que r^2 <= n < (r+1)^2
-	if (n == 0){
-		return 0;
-	
-	} else {
-		return RaizQuad2(n, 1);
-	}
+	// retorna ⌊√(n)⌋
+	return RaizQuad(n, 0, n+1);
 }
 
 int main() {

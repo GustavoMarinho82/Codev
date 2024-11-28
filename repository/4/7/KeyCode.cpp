@@ -1,16 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-int Divisores(int n, int k) { //O~(k)
-	if (k == 0) {
+int Divisores(int n, int k) {
+	if (k==0) {
 		return 0;
-	
 	} else {
 		int x = Divisores(n, k-1);
-		if (n%k == 0)
-			x++;
-			
+		if (n % k == 0) {
+			x = x+1;
+		}
 		return x;
 	}
 }
