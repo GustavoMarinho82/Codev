@@ -1,88 +1,65 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "Bib1.h"
 
-typedef struct No {
-	int E;
-	No * Esq;
-	No * Dir;
-} No;
+/* Interface padrão de pilha */
+void Constroi(Pilha &P);
+void Empilha(Pilha &P, int x);
+int Desempilha(Pilha &P);
+int Topo(Pilha &P);
+int Tamanho(Pilha &P);
+/* Interface padrão de pilha */
 
+typedef struct Fila {
+	Pilha P1,P2;
+} Fila;
 
-int Maior(No * T) {
+void Constroi(Fila &F) {
+	/* insert your code here */
+}
+void Enfileira(Fila &F, int x) {
 	/* insert your code here */
 }
 
-void Insere(No * &T, int e[], int &i) {
-	if (e[i] == 0) {
-		i++;
-		T = NULL;
-	} else  {
-		T = (No *) malloc(sizeof(No));
-		T->E = e[i]; i++;
-		Insere(T->Esq, e, i);
-		Insere(T->Dir, e, i);
-	}
+int Desenfileira(Fila &F) {
+	/* insert your code here */
 }
 
-void Destroi(No * &T) {
-	if (T != NULL) {
-		Destroi(T->Esq);
-		Destroi(T->Dir);
-		free(T);
-		T = NULL;
-	}
+int Proximo(Fila &F) {
+	/* insert your code here */
 }
 
-void PreencheCheia(No * &T, int h) {
-	if (h==0) {
-		T = NULL;
-	} else {
-		T = (No *) malloc(sizeof(No));
-		T->E = h;
-		PreencheCheia(T->Esq, h-1);
-		PreencheCheia(T->Dir, h-1);
-	}
+int Tamanho(Fila &F) {
+	/* insert your code here */
 }
-
-void PreencheZigZag(No * &T, int h) {
-	if (h==0) {
-		T = NULL;
-	} else {
-		T = (No *) malloc(sizeof(No));
-		T->E = h;
-		PreencheZigZag(T->Esq, h-1);
-		T->Dir = NULL;
-	}
-}
-
 
 int main() {
 	setbuf(stdout, NULL); setbuf(stderr, NULL);
-	No * T = NULL; 
-	int * e = (int *) malloc(sizeof(int) * 1000000); int n=0;
-	while (scanf("%d", &e[n])>0) {
-		if (e[n] > -2) {
-			/* teste manual: visita preordem de T (0 para nulo) */
-			while (e[n] != -1) {
-				n++;
-				scanf("%d", &e[n]);
-			}
-			int i=0;
-			Insere(T,e,i);
-			printf("%d\n", Maior(T));
-			Destroi(T);
-			n=0;
+	Fila F; Constroi(F);
+	char op[2]; int e;
+	while (scanf("%s", op)>0) {
+		/* teste manual: 'i e' = enfileira o elemento e; 'r' = desenfileira, 'p' = consulta o próximo, 'n' = consulta o tamanho */
+		if (op[0] == 'i') {
+			scanf("%d", &e); Enfileira(F,e);
+		} else if (op[0] == 'r') {
+			printf("%d\n", Desenfileira(F));
+		} else if (op[0] == 'p') {
+			printf("%d\n", Proximo(F));
+		} else if (op[0] == 'n') {
+			printf("%d\n", Tamanho(F));
 		} else {
 			/* teste automático */
-			if (e[n]==-2) {
-				PreencheCheia(T, 19);
-			} else {
-				PreencheZigZag(T, 50000);
-			}
-			printf("%d\n", Maior(T));
-			Destroi(T);
+			for (int i=1; i<=1000; i++) {
+				Enfileira(F,i);
+			}	
+			while (Tamanho(F) > 0) { 
+				printf("%d ", Tamanho(F));
+				printf("%d ", Proximo(F));
+				printf("%d ", Desenfileira(F));
+			}	
+			printf("\n");
 		}
 	}
-	free(e);
+
 	return 0;
 }

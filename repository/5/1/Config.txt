@@ -1,4 +1,5 @@
-Maior elemento
-1
-Dada uma árvore T não vazia de inteiros positivos, elabore um
-algoritmo para determinar o maior elemento de T. [O(n)]
+Escrevendo uma fila com o auxílio de pilhas
+3
+Reescreva as operações de Fila utilizando duas Pilhas como estrutura 
+de dados auxiliar para guardar os elementos. Manipule as pilhas por 
+suas interfaces padrão. [O(n^2)]

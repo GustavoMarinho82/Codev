@@ -1,87 +1,71 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "Bib1.h"
+#include "Bib2.h"
 
-typedef struct No {
-	int E;
-	No * Esq;
-	No * Dir;
-} No;
+/* Se achar útil empregar uma pilha ou fila em sua solução,
+   utilize-a pela respectiva interface padrão 
+   disponibilizada abaixo */ 
+   
+/* pilha */
+void Constroi(Pilha &P);
+void Empilha(Pilha &P, int x);
+int Desempilha(Pilha &P);
+int Topo(Pilha &P);
+int Tamanho(Pilha &P);
+/* pilha */
 
+/* fila */
+void Constroi(Fila &F);
+void Enfileira(Fila &F, int x);
+int Desenfileira(Fila &F);
+int Proximo(Fila &F);
+int Tamanho(Fila &F);
+/* fila */
 
-int SomaFolhas(No * T) {
+void AlternarPosNeg(int num[], int n) {
+	/* num[0..n-1] são os números entrados pelo usuário */
 	/* insert your code here */
-}
-
-void Insere(No * &T, int e[], int &i) {
-	if (e[i] == 0) {
-		i++;
-		T = NULL;
-	} else  {
-		T = (No *) malloc(sizeof(No));
-		T->E = e[i]; i++;
-		Insere(T->Esq, e, i);
-		Insere(T->Dir, e, i);
-	}
-}
-
-void Destroi(No * &T) {
-	if (T != NULL) {
-		Destroi(T->Esq);
-		Destroi(T->Dir);
-		free(T);
-		T = NULL;
-	}
-}
-
-void PreencheCheia(No * &T, int h) {
-	if (h==0) {
-		T = NULL;
-	} else {
-		T = (No *) malloc(sizeof(No));
-		T->E = h;
-		PreencheCheia(T->Esq, h-1);
-		PreencheCheia(T->Dir, h-1);
-	}
-}
-
-void PreencheZigZag(No * &T, int h) {
-	if (h==0) {
-		T = NULL;
-	} else {
-		T = (No *) malloc(sizeof(No));
-		T->E = h;
-		PreencheZigZag(T->Esq, h-1);
-		T->Dir = NULL;
-	}
 }
 
 int main() {
 	setbuf(stdout, NULL); setbuf(stderr, NULL);
-	No * T = NULL; 
-	int * e = (int *) malloc(sizeof(int) * 1000000); int n=0;
-	while (scanf("%d", &e[n])>0) {
-		if (e[n] > -2) {
-			/* teste manual: visita preordem de T (0 para nulo) */
-			while (e[n] != -1) {
-				n++;
-				scanf("%d", &e[n]);
+	int * num; int n;
+	while (scanf("%d", &n)>0) {
+		if (n > -1) {
+			/* teste manual: n, num[0..n-1] */
+			num = (int *) malloc(sizeof(int) * n);
+			for (int i=0; i<n; i++) {
+				scanf("%d", &num[i]);
 			}
-			int i=0;
-			Insere(T,e,i);
-			printf("%d\n", SomaFolhas(T));
-			Destroi(T);
-			n=0;
+			AlternarPosNeg(num, n);
+			free(num);
 		} else {
 			/* teste automático */
-			if (e[n] == -2) {
-				PreencheCheia(T, 19);
+			if (n==-1) {
+				n = 100000;
+				num = (int *) malloc(sizeof(int) * n);
+				int s = 1;
+				for (int i=0; i<n; i++) { num[i] = s*(i+1); s = -s; }
+				AlternarPosNeg(num, n);
+				free(num);
+			} else if (n==-2) {
+				n = 100000;
+				num = (int *) malloc(sizeof(int) * n);
+				for (int i=0; i<n/2; i++) num[i] = (i+1); 
+				for (int i=n/2; i<n; i++) num[i] = -(i+1); 
+				AlternarPosNeg(num, n);
+				free(num);
 			} else {
-				PreencheZigZag(T, 50000);
+				n = 100000;
+				num = (int *) malloc(sizeof(int) * n);
+				for (int i=0; i<n/2; i++) num[i] = -(i+1); 
+				for (int i=n/2; i<n; i++) num[i] = (i+1); 
+				AlternarPosNeg(num, n);
+				free(num);
 			}
-			printf("%d\n", SomaFolhas(T));
-			Destroi(T);
 		}
 	}
-	free(e);
+
 	return 0;
 }

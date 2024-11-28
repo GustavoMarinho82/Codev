@@ -1,40 +1,108 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <algorithm>
+using namespace std;
 
-int RaizQuad2(int n, int r){ //O(n)
-	if ((r*r <= n) && (n < (r+1)*(r+1))) {
-		return r;
-	
-	} else {
-		return RaizQuad2(n, r+1);
+typedef struct No {
+	int E;
+	int h;
+	No * Esq;
+	No * Dir;
+} No;
+
+void AtualizaAltura(No * T) {
+	/* insert your code here */
+}
+
+
+void C_AtualizaAltura(No * T) {
+#ifndef CODEV
+	printf("CODEV_BEGIN_EXEC\n");
+#endif
+	AtualizaAltura(T);
+#ifndef CODEV
+	printf("CODEV_END_EXEC\n");
+#endif
+}
+
+void Insere(No * &T, int e[], int &i) {
+	if (e[i] == 0) {
+		i++;
+		T = NULL;
+	} else  {
+		T = (No *) malloc(sizeof(No));
+		T->E = e[i]; i++;
+		Insere(T->Esq, e, i);
+		Insere(T->Dir, e, i);
 	}
 }
 
-int RaizQuad(int n) { //O(n)
-	// assume n >= 0
-	// retorna r tal que r^2 <= n < (r+1)^2
-	if (n == 0){
-		return 0;
-	
-	} else {
-		return RaizQuad2(n, 1);
+void Destroi(No * &T) {
+	if (T != NULL) {
+		Destroi(T->Esq);
+		Destroi(T->Dir);
+		free(T);
+		T = NULL;
 	}
 }
+
+void PreencheCheia(No * &T, int h, int &i) {
+	if (h==0) {
+		T = NULL;
+	} else {
+		T = (No *) malloc(sizeof(No));
+		T->E = i; i++;
+		PreencheCheia(T->Esq, h-1, i);
+		PreencheCheia(T->Dir, h-1, i);
+	}
+}
+
+void PreencheZigZag(No * &T, int h, int &i) {
+	if (h==0) {
+		T = NULL;
+	} else {
+		T = (No *) malloc(sizeof(No));
+		T->E = i; i++;
+		PreencheZigZag(T->Esq, h-1, i);
+		T->Dir = NULL;
+	}
+}
+
+void Escreve(No * T) {
+	if (T != NULL) {
+		printf("h(%d)=%d ", T->E, T->h);
+		Escreve(T->Esq); Escreve(T->Dir);
+	}
+}
+
+int FIM_ENTRADA = -1000;
+int ENTRADA_AUTOMATICA = -2000;
 
 int main() {
 	setbuf(stdout, NULL); setbuf(stderr, NULL);
-	int n; 
-	while (scanf("%d", &n)>0) {
-		if (n>=0) {
-			/* teste manual */
-			printf("%d\n", RaizQuad(n));
+	No * T = NULL; 
+	int * e = (int *) malloc(sizeof(int) * 1000000); int n=0;
+	while (scanf("%d", &e[n])>0) {
+		if (e[n] > ENTRADA_AUTOMATICA) {
+			/* teste manual: visita preordem de T (0 para nulo) */
+			while (e[n] != FIM_ENTRADA) {
+				n++;
+				scanf("%d", &e[n]);
+			}
+			int i=0;
+			Insere(T,e,i); 
 		} else {
 			/* teste automático */
-			n = 50000; 
-			for (int t=1; t<=200; t++) RaizQuad(n);
-			printf("%d\n", RaizQuad(n));
+			int i=1; 
+			if (e[n] == ENTRADA_AUTOMATICA) {
+				PreencheCheia(T, 19, i); 
+			} else {
+				PreencheZigZag(T, 50000, i); 
+			}
 		}
+		C_AtualizaAltura(T); Escreve(T); printf("\n"); Destroi(T);
+		n=0;
 	}
-
+	free(e);
 	return 0;
 }

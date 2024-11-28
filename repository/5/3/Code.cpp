@@ -1,99 +1,52 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <algorithm>
+#include "Bib1.h"
 
-int FIM_ENTRADA = -1000;
-int ENTRADA_AUTOMATICA = -2000;
+/* Interface padrão de pilha */
+void Constroi(Pilha &P);
+void Empilha(Pilha &P, int x);
+int Desempilha(Pilha &P);
+int Topo(Pilha &P);
+int Tamanho(Pilha &P);
+/* Interface padrão de pilha */
 
-typedef struct No {
-	int E;
-	No * Esq;
-	No * Dir;
-} No;
-
-
-int MaiorSubarvore(No * T) {
+void Ordena(Pilha &P) {
+	Pilha Q; Constroi(Q);
 	/* insert your code here */
 }
 
-void Insere(No * &T, int e[], int &i) {
-	if (e[i] == 0) {
-		i++;
-		T = NULL;
-	} else  {
-		T = (No *) malloc(sizeof(No));
-		T->E = e[i]; i++;
-		Insere(T->Esq, e, i);
-		Insere(T->Dir, e, i);
-	}
-}
-
-void Destroi(No * &T) {
-	if (T != NULL) {
-		Destroi(T->Esq);
-		Destroi(T->Dir);
-		free(T);
-		T = NULL;
-	}
-}
-
-void PreencheCheia(No * &T, int h) {
-	if (h==0) {
-		T = NULL;
-	} else {
-		T = (No *) malloc(sizeof(No));
-		if (h>1) {
-			T->E = -2;
-		} else {
-			T->E = 1; 
-		} 
-		PreencheCheia(T->Esq, h-1);
-		PreencheCheia(T->Dir, h-1);
-	}
-}
-
-void PreencheZigZag(No * &T, int h) {
-	if (h==0) {
-		T = NULL;
-	} else {
-		T = (No *) malloc(sizeof(No));
-		if (h>1) {
-			T->E = -2;
-		} else {
-			T->E = 1; 
+void Escreve(Pilha &P) {
+		while (Tamanho(P) > 0) {
+			printf("%d ", Desempilha(P));
 		}
-		PreencheZigZag(T->Esq, h-1);
-		T->Dir = NULL;
-	}
+		printf("\n");
 }
 
 int main() {
 	setbuf(stdout, NULL); setbuf(stderr, NULL);
-	No * T = NULL; 
-	int * e = (int *) malloc(sizeof(int) * 1000000); int n=0;
-	while (scanf("%d", &e[n])>0) {
-		if (e[n] > ENTRADA_AUTOMATICA) {
-			/* teste manual: visita preordem de T (0 para nulo) */
-			while (e[n] != FIM_ENTRADA) {
-				n++;
-				scanf("%d", &e[n]);
+	Pilha P; Constroi(P);
+	int n; int e;
+	while (scanf("%d", &n)>0) {
+		if (n>=0) {
+			/* teste manual: 'n e_1 ... e_n' */
+			for (int i=1; i<=n; i++) {
+				scanf("%d", &e); Empilha(P,e);
 			}
-			int i=0;
-			Insere(T,e,i);
-			printf("%d\n", MaiorSubarvore(T));
-			Destroi(T);
-			n=0;
+			Ordena(P); Escreve(P);
 		} else {
 			/* teste automático */
-			if (e[n] == ENTRADA_AUTOMATICA) {
-				PreencheZigZag(T, 50000);
+			if (n==-1) {
+				for (int i=1; i<=1000; i++) {
+					Empilha(P,i+(1001)*(i%2));
+				}	
 			} else {
-				PreencheCheia(T, 19);
+				for (int i=1; i<=1000; i++) {
+					Empilha(P,i+(1001)*(i%5==0 ? 0 : 1));
+				}	
 			}
-			printf("%d\n", MaiorSubarvore(T));
-			Destroi(T);
+			Ordena(P); Escreve(P);
 		}
 	}
-	free(e);
+
 	return 0;
 }

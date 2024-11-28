@@ -1,5 +1,4 @@
-Computando exponenciação b^n [O(n)]
+Soma das folhas
 1
-Faça um algoritmo recursivo que, dados natural positivo b, e 
-natural n, determine b^n (b elevado a n). Seu algoritmo deve 
-empregar apenas as 4 operações aritméticas básicas. [O(n)]
+Dada uma árvore T de inteiros positivos, elabore um
+algoritmo para determinar a soma das folhas de T. [O(n)]

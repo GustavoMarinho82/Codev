@@ -1,108 +1,44 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <algorithm>
-using namespace std;
+#include "Bib1.h"
+#include "Bib2.h"
 
-typedef struct No {
-	int E;
-	int h;
-	No * Esq;
-	No * Dir;
-} No;
+/* Se achar útil empregar uma pilha ou fila em sua solução,
+   utilize-a pela respectiva interface padrão 
+   disponibilizada abaixo */ 
+   
+/* pilha */
+void Constroi(Pilha &P);
+void Destroi(Pilha &P);
+void Empilha(Pilha &P, int x);
+int Desempilha(Pilha &P);
+int Topo(Pilha &P);
+int Tamanho(Pilha &P);
+/* pilha */
 
-void AtualizaAltura(No * T) {
+/* fila */
+void Constroi(Fila &F);
+void Destroi(Fila &F);
+void Enfileira(Fila &F, int x);
+int Desenfileira(Fila &F);
+int Proximo(Fila &F);
+int Tamanho(Fila &F);
+/* fila */
+
+
+void LerEscreverKUltimos(int k) {
+	/* leia uma sequência de números (usando scanf()), e ao final (número lido é 0),
+	   escreva os k últimos lidos (usando printf()). 
+	   (Deixe um espaço ao final de cada número impresso.) */
 	/* insert your code here */
 }
 
-
-void C_AtualizaAltura(No * T) {
-#ifndef CODEV
-	printf("CODEV_BEGIN_EXEC\n");
-#endif
-	AtualizaAltura(T);
-#ifndef CODEV
-	printf("CODEV_END_EXEC\n");
-#endif
-}
-
-void Insere(No * &T, int e[], int &i) {
-	if (e[i] == 0) {
-		i++;
-		T = NULL;
-	} else  {
-		T = (No *) malloc(sizeof(No));
-		T->E = e[i]; i++;
-		Insere(T->Esq, e, i);
-		Insere(T->Dir, e, i);
-	}
-}
-
-void Destroi(No * &T) {
-	if (T != NULL) {
-		Destroi(T->Esq);
-		Destroi(T->Dir);
-		free(T);
-		T = NULL;
-	}
-}
-
-void PreencheCheia(No * &T, int h, int &i) {
-	if (h==0) {
-		T = NULL;
-	} else {
-		T = (No *) malloc(sizeof(No));
-		T->E = i; i++;
-		PreencheCheia(T->Esq, h-1, i);
-		PreencheCheia(T->Dir, h-1, i);
-	}
-}
-
-void PreencheZigZag(No * &T, int h, int &i) {
-	if (h==0) {
-		T = NULL;
-	} else {
-		T = (No *) malloc(sizeof(No));
-		T->E = i; i++;
-		PreencheZigZag(T->Esq, h-1, i);
-		T->Dir = NULL;
-	}
-}
-
-void Escreve(No * T) {
-	if (T != NULL) {
-		printf("h(%d)=%d ", T->E, T->h);
-		Escreve(T->Esq); Escreve(T->Dir);
-	}
-}
-
-int FIM_ENTRADA = -1000;
-int ENTRADA_AUTOMATICA = -2000;
-
 int main() {
 	setbuf(stdout, NULL); setbuf(stderr, NULL);
-	No * T = NULL; 
-	int * e = (int *) malloc(sizeof(int) * 1000000); int n=0;
-	while (scanf("%d", &e[n])>0) {
-		if (e[n] > ENTRADA_AUTOMATICA) {
-			/* teste manual: visita preordem de T (0 para nulo) */
-			while (e[n] != FIM_ENTRADA) {
-				n++;
-				scanf("%d", &e[n]);
-			}
-			int i=0;
-			Insere(T,e,i); 
-		} else {
-			/* teste automático */
-			int i=1; 
-			if (e[n] == ENTRADA_AUTOMATICA) {
-				PreencheCheia(T, 19, i); 
-			} else {
-				PreencheZigZag(T, 50000, i); 
-			}
-		}
-		C_AtualizaAltura(T); Escreve(T); printf("\n"); Destroi(T);
-		n=0;
+	int k; 
+	while (scanf("%d", &k)>0) {
+		/* teste manual: 'k <sequência de elementos, último igual a 0>' */
+		LerEscreverKUltimos(k);
 	}
-	free(e);
 	return 0;
 }

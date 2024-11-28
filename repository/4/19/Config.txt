@@ -1,5 +1,0 @@
-Lista sequencial: remoção de elementos maiores que k
-3
-Dados um inteiro n, um vetor de inteiros L e um 
-inteiro k, elabore uma procedimento recursivo que remova 
-todos os elementos maiores que k de L[0..n-1]. [O(n)]

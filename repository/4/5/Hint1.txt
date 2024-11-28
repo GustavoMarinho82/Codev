@@ -1,10 +1,6 @@
-- Considere que seja dado o valor x = piso(√(n-1)). 
-  A recursão pode lhe ajudar a obter x.
-
-  Note que x, em boa parte dos casos, é também igual 
-  a piso(√(n)). Mas nem sempre. 
+- A recursão pode ajudar a atualizar as alturas dos nós da 
+  subárvores esquerda e direita de T. 
   
-  Quando é que x e piso(√(n)) diferem? 
+- Após isso, como é possível atualizar a altura do nó raiz
+  em tempo constante?
   
-  Pense em como detectar tais caso e qual seria o valor 
-  correto de piso(√(n)) em função de x.

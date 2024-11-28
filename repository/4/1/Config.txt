@@ -1,4 +1,4 @@
-Determinando o n-ésimo ímpar
+Maior elemento
 1
-Faça um algoritmo recursivo que, dado um natural n, determine
-o n-ésimo número ímpar. [O(n)]
+Dada uma árvore T não vazia de inteiros positivos, elabore um
+algoritmo para determinar o maior elemento de T. [O(n)]
