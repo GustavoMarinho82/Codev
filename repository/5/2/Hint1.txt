@@ -1,11 +1,11 @@
-- Note que os números positivos e negativos lidos
-  devem ser armazenados em uma estrutura de dados,
-  para posterior impressão. E, nesse momento, devem
-  manter a mesma ordem de entrada. Que tal usar 
-  alguma estrutura de dados para tal armazenamento
-  que naturalmente mantenha a ordem de entrada no
-  momento de remover os dados?
+- Considere obter a soma s1 de todas as folhas pertecentes à 
+  subárvore esquerda de T e a soma s2 de todas as folhas 
+  da subárvore direita de T. A recursão pode lhe ajudar a obter 
+  tais valores.
+  
+- Como obter a soma de todas as folhas de T, com base em s1 e s2?
 
-- Evite criar algoritmos que, indiretamente, implementam
-  uma fila ou uma pilha. Utilize essas estruturas já
-  prontas, manipulando-as pela interface padrão.
+- Cuidado que há uma única árvore não-vazia que o raciocínio acima
+  não se aplica; separe esse caso à parte (esse ainda não é o caso
+  base)
+  

@@ -1,8 +1,7 @@
-- Considere obter o maior elemento m1 pertecente à 
-  árvore T->Esq, e o maior elemento m2 pertecente à 
-  árvore T->Dir. A recursão pode lhe ajudar a obter tais
-  valores.
-  
-  O maior elemento de T pode ser m1? e m2? 
-  Há algum outro elemento que pode ser o maior?
-  Como distinguir o maior da árvore, entre tais candidatos?
+- Considere que seja dado o valor x correspondendo ao
+  (n-1)-ésimo número ímpar. A recursão pode lhe ajudar 
+  a obter tal x.
+
+  Como que o valor de x se relaciona ao valor do n-ésimo 
+  número ímpar?
+

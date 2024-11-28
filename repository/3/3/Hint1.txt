@@ -1,7 +1,12 @@
-- Considere que n seja par, e seja dado o valor 
-  x = b^(n/2). A recursão pode lhe ajudar a obter x.
+- Note que, na ordenação final procurada, no fundo da pilha deve
+  haver o maior elemento; na posição acima desse, o segundo maior
+  elemento da pilha, e assim por diante, até que no topo da pilha
+  há o menor elemento. Tente remover os elementos da pilha, 
+  transferindo-os temporariamente para a pilha auxiliar, e 
+  trazendo-os de volta tentando fazer com que, a cada transferência,
+  ao menos um elemento a mais da pilha esteja em sua posição 
+  correta, do fundo até o topo.
+ 
 
-  Como que o valor de x se relaciona ao valor de b^n?
 
-  Se n é ímpar, como um raciocínio análogo ao acima
-  pode ser usado?
+

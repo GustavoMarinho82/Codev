@@ -1,9 +1,31 @@
-- Considere que seja dado o valor x = Bin(n-1,k-1). 
-  A recursão pode lhe ajudar a obter x.
+- Considere a seguinte maneira de se verificar se uma
+  expressão de entrada é corretamente parentizada:
+  
+  Entrada: (1 (2 )2 (2 )1 )2
+  
+  (1 (2 )2 (2 )1 )2
+   ^ => encontrado um abre parêntese do tipo 1; anotar 
+  
+  (1 (2 )2 (2 )1 )2
+      ^ => encontrado um abre parêntese do tipo 2; anotar 
+            
+  (1 (2 )2 (2 )1 )2
+         ^ => encontrado um fecha parêntese do tipo 2
+              como o último parêntese pendente de fechamento
+              era um do tipo 1, remover a anotação que
+              esse parêntese está pendente de fechar
 
-  Escreva as expressões, que envolvem fatoriais, 
-  tanto de Bin(n,k) quanto de x. 
-  Olhando para tais expressões, responda: 
-
-  Como a expressão de Bin(n,k) pode ser escrita em
-  função de x?
+  (1 (2 )2 (2 )1 )2
+           ^ => encontrado um abre parêntese do tipo 2; anotar 
+ 
+  (1 (2 )2 (2 )1 )2
+               ^ => encontrado um fecha parêntese do tipo 1
+              como o último parêntese pendente de fechamento
+              era um do tipo 2, esse parentização é incorreta
+              
+- Tente prosseguir a análise conforme acima, encontrando todas
+  as situações que podem ocorrer quando um novo parêntese é
+  aberto ou fechado, e o que se deve verificar em cada caso.
+  
+- Atente para situações em que há mais parênteses abrindo do
+  que fechando, e vice-versa.

@@ -1,11 +1,4 @@
-- Considere obter a soma s1 de todas as folhas pertecentes à 
-  subárvore esquerda de T e a soma s2 de todas as folhas 
-  da subárvore direita de T. A recursão pode lhe ajudar a obter 
-  tais valores.
-  
-- Como obter a soma de todas as folhas de T, com base em s1 e s2?
+- Considere que seja dado o valor de x = b^(n-1). 
+  A recursão pode lhe ajudar a obter x.
 
-- Cuidado que há uma única árvore não-vazia que o raciocínio acima
-  não se aplica; separe esse caso à parte (esse ainda não é o caso
-  base)
-  
+  Como que o valor de x se relaciona ao valor de b^n?

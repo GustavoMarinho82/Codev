@@ -1,87 +1,131 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "Bib1.h"
-#include "Bib2.h"
+#include <bits/stdc++.h>
 
-/* Se achar útil empregar uma pilha ou fila em sua solução,
-   utilize-a pela respectiva interface padrão 
-   disponibilizada abaixo */ 
-   
-/* pilha */
-void Constroi(Pilha &P);
-void Destroi(Pilha &P);
-void Empilha(Pilha &P, int x);
-int Desempilha(Pilha &P);
-int Topo(Pilha &P);
-int Tamanho(Pilha &P);
-/* pilha */
+int FIM_ENTRADA = -1000;
+int ENTRADA_AUTOMATICA = -2000;
 
-/* fila */
-void Constroi(Fila &F);
-void Destroi(Fila &F);
-void Enfileira(Fila &F, int x);
-int Desenfileira(Fila &F);
-int Proximo(Fila &F);
-int Tamanho(Fila &F);
-/* fila */
+typedef struct NoL {
+	int E;
+	NoL * Prox;
+} NoL;
+
+typedef struct No {
+	int E;
+	No * Esq;
+	No * Dir;
+} No;
 
 
-typedef struct Parentese {
-	char desc; /* '(' ou ')' */
-	int tipo;
-} Parentese;
-
-bool VerificaParentizacao(Parentese E[], int n) {
+NoL * ListaNosInternos(No * T) {
 	/* insert your code here */
+}
+
+
+NoL * C_ListaNosInternos(No * T) {
+#ifndef CODEV
+	printf("CODEV_BEGIN_EXEC\n");
+#endif
+	NoL * r;
+	r = ListaNosInternos(T);
+#ifndef CODEV
+	printf("CODEV_END_EXEC\n");
+#endif
+	return r;
+}
+
+void Insere(No * &T, int e[], int &i) {
+	if (e[i] == 0) {
+		i++;
+		T = NULL;
+	} else  {
+		T = (No *) malloc(sizeof(No));
+		T->E = e[i]; i++;
+		Insere(T->Esq, e, i);
+		Insere(T->Dir, e, i);
+	}
+}
+
+void Destroi(No * &T) {
+	if (T != NULL) {
+		Destroi(T->Esq);
+		Destroi(T->Dir);
+		free(T);
+		T = NULL;
+	}
+}
+
+void Destroi(NoL * &L) {
+	NoL * p = L; NoL * pa = NULL;
+	if (p != NULL) {
+		pa = p; p = p->Prox;
+		free(pa);
+	}
+	L = NULL;
+}
+
+void PreencheCheia(No * &T, int h) {
+	if (h==0) {
+		T = NULL;
+	} else {
+		T = (No *) malloc(sizeof(No));
+		T->E = h;
+		PreencheCheia(T->Esq, h-1);
+		PreencheCheia(T->Dir, h-1);
+	}
+}
+
+void PreencheZigZag(No * &T, int h) {
+	if (h==0) {
+		T = NULL;
+	} else {
+		T = (No *) malloc(sizeof(No));
+		T->E = h;
+		PreencheZigZag(T->Esq, h-1);
+		T->Dir = NULL;
+	}
+}
+
+void Escreve(NoL * L) {
+	int n = 0;
+	NoL * p = L;
+	while (p != NULL) {
+		n++; p = p->Prox;
+	}
+	int * Lv = (int *) malloc(sizeof(int)*n);
+	p = L; int i = 0;
+	while (p != NULL) {
+		Lv[i] = p->E; i++; p = p->Prox;
+	}
+	std::sort(Lv,Lv+n);
+	printf("[ "); for (int i=0; i<n; i++) printf("%d ", Lv[i]); printf("]\n");
+	free(Lv);
 }
 
 int main() {
 	setbuf(stdout, NULL); setbuf(stderr, NULL);
-	Parentese * E; int n; 
-	while (scanf("%d", &n)>0) {
-		if (n>=0) {
-			/* teste manual: 'n <parentização com n elementos>' */
-			char * Ec = (char *) malloc(sizeof(char)*4*n);
-			E = (Parentese *) malloc(sizeof(Parentese)*n);
-			scanf("%s", Ec);
-			int j=0;
-			for (int i=0; i<n; i++) {
-				E[i].desc = Ec[j]; j++;
-				char tipo[10];
-				int z=j;
-				while ((Ec[j] != '\0') && (Ec[j] != '(') && (Ec[j] != ')')) {
-					tipo[j-z] = Ec[j];
-					j = j+1;
-				}
-				tipo[j-z] = '\0';
-				E[i].tipo = atoi(tipo);
+	No * T = NULL; 
+	int * e = (int *) malloc(sizeof(int) * 1000000); int n=0;
+	while (scanf("%d", &e[n])>0) {
+		if (e[n] > ENTRADA_AUTOMATICA) {
+			/* teste manual: visita preordem de T (0 para nulo) */
+			while (e[n] != FIM_ENTRADA) {
+				n++;
+				scanf("%d", &e[n]);
 			}
-			printf("%d\n", VerificaParentizacao(E,n));
-			free(E); free(Ec);
+			int i=0;
+			Insere(T,e,i);
 		} else {
 			/* teste automático */
-			int nlin = n;
-			n = 1000000;
-			E = (Parentese *) malloc(sizeof(Parentese)*n);
-			if (nlin==-1) {
-				for (int i=0; i<n/2; i++) {	E[i].desc = '('; E[i].tipo = 1;	}	
-				for (int i=n/2; i<n; i++) {	E[i].desc = ')'; E[i].tipo = 1;	}	
-			} else if (nlin==-2) {
-				for (int i=0; i<n/2; i++) {	E[i].desc = '('; E[i].tipo = i+1;	}	
-				for (int i=n/2; i<n; i++) {	E[i].desc = ')'; E[i].tipo = n-(i+1)+1;	}	
-			} else if (nlin==-3) {
-				for (int i=0; i<n; i += 2) { E[i].desc = '('; E[i].tipo = i+1; E[i+1].desc = ')'; E[i+1].tipo = i+1; }	
-			} else if (nlin==-4) {
-				for (int i=0; i<n/2-1; i++) {	E[i].desc = '('; E[i].tipo = 1;	}	
-				for (int i=n/2-1; i<n; i++) {	E[i].desc = ')'; E[i].tipo = 1; }	
-			} else if (nlin==-5) {
-				for (int i=0; i<n/2+1; i++) {	E[i].desc = '('; E[i].tipo = 1;	}	
-				for (int i=n/2+1; i<n; i++) {	E[i].desc = ')'; E[i].tipo = 1; }	
+			if (e[n] == ENTRADA_AUTOMATICA) {
+				PreencheZigZag(T, 50000);
+			} else {
+				PreencheCheia(T, 19);
 			}
-			printf("%d\n", VerificaParentizacao(E,n));
-			free(E); 
 		}
+		NoL * L = C_ListaNosInternos(T); Escreve(L); Destroi(L); Destroi(T); 
+		n=0; 
 	}
-
+	free(e);
 	return 0;
 }

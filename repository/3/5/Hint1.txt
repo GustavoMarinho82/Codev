@@ -1,10 +1,11 @@
-- Considere que seja dado o valor x = piso(√(n-1)). 
-  A recursão pode lhe ajudar a obter x.
-
-  Note que x, em boa parte dos casos, é também igual 
-  a piso(√(n)). Mas nem sempre. 
+- Ao ler um novo inteiro, guarde-o em uma estrutura de 
+  dados auxiliar. Note que, na saída, os elementos devem
+  sair dessa estrutura na mesma ordem com que entraram.
   
-  Quando é que x e piso(√(n)) diferem? 
+- Não é necessário armazenar todos os elementos lidos até
+  o final. Assim que o armazenamento de um elemento se 
+  tornar inútil, remova esse elemento.
   
-  Pense em como detectar tais caso e qual seria o valor 
-  correto de piso(√(n)) em função de x.
+- Pela complexidade final esperada, tanto a inserção quanto
+  a remoção dessa estrutura auxiliar deve ser de tempo
+  constante.

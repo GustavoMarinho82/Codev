@@ -1,5 +1,12 @@
-Preenchendo a altura dos nós
+Raiz quadrada inteira [O(n)]
 1
-Dada uma árvore T de inteiros, elabore um algoritmo que 
-atualize um campo chamado h, presente em cada nó da árvore,
-com a respectiva altura desse nó. [O(n)]
+Faça um algoritmo recursivo que, dado natural n, determine 
+a raiz quadrada inteira de n, isto é, o valor r tal que
+
+r = piso(√(n))
+
+ou, ainda, o valor r tal que
+
+r^2 <= n < (r+1)^2 
+
+[O(n)]

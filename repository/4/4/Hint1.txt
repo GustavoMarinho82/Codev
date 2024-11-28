@@ -1,18 +1,9 @@
-- A recursão pode ajudar a obter uma lista encadeada Le com os 
-  nós internos da subárvore esquerda de T, e outra Ld com aqueles
-  da subárvore direita de T. No entanto, será necessário juntar 
-  as duas listas.
-  
-  Mais eficiente seria se, ao invés de cada problema recursivo
-  retornar uma lista, que ambas já adicionassem seus elementos em
-  uma lista única. Assim, considere a seguinte versão do problema:
-  
-  Dada uma árvore T de inteiros e uma lista encadeada L, elabore 
-  um algoritmo que adicione em L os elementos correspondentes a 
-  nós internos de T.
-  
-- A recursão pode lhe ajudar a inserir todos os nós internos da
-  subárvore à esquerda e todos os nós internos da subárvore da
-  direita. Algum outro elemento deveria ser inserido nessa lista?
+- Considere que seja dado o valor x = Bin(n-1,k-1). 
+  A recursão pode lhe ajudar a obter x.
 
+  Escreva as expressões, que envolvem fatoriais, 
+  tanto de Bin(n,k) quanto de x. 
+  Olhando para tais expressões, responda: 
 
+  Como a expressão de Bin(n,k) pode ser escrita em
+  função de x?

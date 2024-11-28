@@ -1,31 +1,18 @@
-- Considere a seguinte maneira de se verificar se uma
-  expressão de entrada é corretamente parentizada:
+- A recursão pode ajudar a obter uma lista encadeada Le com os 
+  nós internos da subárvore esquerda de T, e outra Ld com aqueles
+  da subárvore direita de T. No entanto, será necessário juntar 
+  as duas listas.
   
-  Entrada: (1 (2 )2 (2 )1 )2
+  Mais eficiente seria se, ao invés de cada problema recursivo
+  retornar uma lista, que ambas já adicionassem seus elementos em
+  uma lista única. Assim, considere a seguinte versão do problema:
   
-  (1 (2 )2 (2 )1 )2
-   ^ => encontrado um abre parêntese do tipo 1; anotar 
+  Dada uma árvore T de inteiros e uma lista encadeada L, elabore 
+  um algoritmo que adicione em L os elementos correspondentes a 
+  nós internos de T.
   
-  (1 (2 )2 (2 )1 )2
-      ^ => encontrado um abre parêntese do tipo 2; anotar 
-            
-  (1 (2 )2 (2 )1 )2
-         ^ => encontrado um fecha parêntese do tipo 2
-              como o último parêntese pendente de fechamento
-              era um do tipo 1, remover a anotação que
-              esse parêntese está pendente de fechar
+- A recursão pode lhe ajudar a inserir todos os nós internos da
+  subárvore à esquerda e todos os nós internos da subárvore da
+  direita. Algum outro elemento deveria ser inserido nessa lista?
 
-  (1 (2 )2 (2 )1 )2
-           ^ => encontrado um abre parêntese do tipo 2; anotar 
- 
-  (1 (2 )2 (2 )1 )2
-               ^ => encontrado um fecha parêntese do tipo 1
-              como o último parêntese pendente de fechamento
-              era um do tipo 2, esse parentização é incorreta
-              
-- Tente prosseguir a análise conforme acima, encontrando todas
-  as situações que podem ocorrer quando um novo parêntese é
-  aberto ou fechado, e o que se deve verificar em cada caso.
-  
-- Atente para situações em que há mais parênteses abrindo do
-  que fechando, e vice-versa.
+

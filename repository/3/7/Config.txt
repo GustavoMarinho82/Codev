@@ -1,5 +1,0 @@
-Divisores limitados a determinado valor
-1
-Faça um algoritmo recursivo que, dados naturais n,k, 
-determine o número de divisores de n que são menores 
-ou iguais a k. [O(k)]
