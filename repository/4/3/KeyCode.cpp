@@ -1,14 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int Exp(int b, int n) { // O(n)
+int Exp(int b, int n) {
 	// assume b > 0, n >= 0
 	// retorna b^n
-	if (n == 0) {
+	if (n==0) {
 		return 1;
-		
 	} else {
-		return b * Exp(b, n-1);
+		if (n%2 == 0) {
+			int x = Exp(b,n/2);
+			return x*x;	
+		} else {
+			int x = Exp(b,(n-1)/2);
+			return x*x*b;	
+		}
 	}
 }
 

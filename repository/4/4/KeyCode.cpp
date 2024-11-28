@@ -1,17 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-long long int Bin(int n, int k) { //O~(k)
+long long int Bin(int n, int k) {
 	// assume n >= k >= 0
 	// retorna binomial de n,k = n! / (k! (n-k)!)
-	if (k == 0){
+	if (k==0) {
 		return 1;
-		
 	} else {
-		return n * Bin(n-1, k-1) / k;
-		/* Equivalente à [ n/k * Bin(n-1, k-1) ], mas a divisão tem que ser feita após
-		 * a multiplicação. Porque o n/k pode gerar um decimal, que será convertido 
-		 * para inteiro, assim podendo perder parte do seu valor. */ 
+		long long int x = Bin(n-1,k-1);
+		return x * n / k;
 	}
 }
 

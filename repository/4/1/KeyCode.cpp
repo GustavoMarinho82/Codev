@@ -1,15 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int Impar(int n) { //O(n)
-	if (n == 1) {
+int Impar(int n) {
+	// assume n >= 0
+	// retorna o n-ésimo ímpar
+	if (n==1) {
 		return 1;
-		
-	} else if (n > 1) {
-		return 2 + Impar(n-1);
-	
 	} else {
-		return 0;
+		return Impar(n-1)+2;
 	}
 }
 
