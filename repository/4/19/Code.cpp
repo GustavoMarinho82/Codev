@@ -5,17 +5,23 @@ using namespace std;
 
 bool DEBUG;
 
-void RemoveMaiores(int L[], int &n, int k) {
-	if (n > 0) {
-		int nlin = n-1;
+void RemoveMaiores(int L[], int &n, int k) { //O(n)
+	//Remove os Maiores Elementos de L[0..n-1], sem necessariamente manter a ordem, e atualiza o tamanho do vetor em n
+	
+	if (n > 0) {  // Caso base: o vetor tem pelo menos um elemento
+		int nlin = n - 1;  // Armazena o índice do último elemento no vetor
+        
+		// Chamada recursiva para processar os elementos antes do último
 		RemoveMaiores(L, nlin, k);
 		
-		if (L[n-1] <= k) {
-			L[nlin] = L[n-1];
-			n = nlin+1;
-		
+		// Verifica se o último elemento (L[n-1]) é maior que k
+		if (L[n - 1] <= k) {
+			// Se for menor ou igual a k, mantém o valor na posição correta
+			L[nlin] = L[n - 1];  // Move o elemento para a posição nlin
+			n = nlin + 1;  // Atualiza o tamanho do vetor
 		} else {
-			n = nlin;
+			// Se for maior que k, simplesmente descarta o elemento
+			n = nlin;  // Atualiza o tamanho do vetor (reduz o número de elementos)
 		}
 	}
 }

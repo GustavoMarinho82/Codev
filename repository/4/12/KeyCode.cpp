@@ -6,17 +6,27 @@ typedef struct No {
 	No * Prox;
 } No;
 
-int KUltimo2(No * L, No * LAnt, int k) { //O(n)
-	if (k > 1){
-		return (L->Prox == NULL) ? -1 : KUltimo2(L->Prox, LAnt, k-1);
-		
+int KUltimo(No * L, int k, int &n) {
+	/* retorna em n o número de elementos de L */
+	if (L == NULL) {
+		n = 0;
+		return -1;
 	} else {
-		return (L->Prox == NULL) ? (LAnt->E) : KUltimo2(L->Prox, LAnt->Prox, k);
-	}
+		int x = KUltimo(L->Prox, k, n);
+		n = n+1;
+		if (n == k) {
+			return L->E;
+		} else if (n<k) {
+			return -1;
+		} else {
+			return x;
+		}
+	}	
 }
 
-int KUltimo(No * L, int k) { //O(n)
-	return (L == NULL) ? -1 : KUltimo2(L, L, k);
+int KUltimo(No * L, int k) {
+	int n;
+	return KUltimo(L,k,n);
 }
 
 void Constroi(No * &L, No * &u) {

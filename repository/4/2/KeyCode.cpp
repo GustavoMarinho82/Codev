@@ -1,20 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int Exp(int b, int n) { //O(log n)
+int Exp(int b, int n) {
 	// assume b > 0, n >= 0
 	// retorna b^n
-	if (n == 0) {
+	if (n==0) {
 		return 1;
-	
-	} else { 
-		if (n%2 == 0) {
-			int x = Exp(b, n/2);
-			return x * x; //b^(n/2) * b^(n/2) = b^n
-			
-		} else {
-			return b * Exp(b, n-1);
-		}
+	} else {
+		return Exp(b,n-1) * b;
 	}
 }
 

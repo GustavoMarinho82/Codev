@@ -7,8 +7,16 @@ typedef struct No {
 } No;
 
 
-int Maior(No * L) {
-	/* insert your code here */
+int Maior(No * L) { //O~(n)
+	// Assume que a lista tem pelo menos um elemento
+	if (L->Prox == NULL) {
+		return L->E;
+		
+	} else {
+		int x = Maior(L->Prox);
+		
+		return (x > (L->E)) ? x : (L->E);
+	}
 }
 
 void Insere(No * &L, int e) {

@@ -11,7 +11,8 @@ long long int Bin(int n, int k) { //O~(k)
 		return n * Bin(n-1, k-1) / k;
 		/* Equivalente à [ n/k * Bin(n-1, k-1) ], mas a divisão tem que ser feita após
 		 * a multiplicação. Porque o n/k pode gerar um decimal, que será convertido 
-		 * para inteiro, assim podendo perder parte do seu valor. */ 
+		 * para inteiro, assim podendo perder parte do seu valor. 
+		 */ 
 	}
 }
 

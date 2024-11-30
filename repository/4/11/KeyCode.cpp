@@ -6,15 +6,15 @@ typedef struct No {
 	No * Prox;
 } No;
 
-int Ultimo(No * L) { //O~(n)
+int Ultimo(No * L) {
 	if (L == NULL) {
 		return -1;
-	
-	} else if (L->Prox == NULL){
-		return L->E;
-	
 	} else {
-		return Ultimo(L->Prox);
+		if (L->Prox == NULL) {
+			return L->E;
+		} else {
+			return Ultimo(L->Prox);
+		}
 	}
 }
 

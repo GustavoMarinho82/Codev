@@ -6,12 +6,15 @@ typedef struct No {
 	No * Prox;
 } No;
 
-int NumeroElementos(No * L) { //O~(n)
-	if (L == NULL) {
-		return 0;
+int max(int a, int b) {
+	return (a<b ? b : a);
+}
 
+int Maior(No * L) {
+	if (L->Prox == NULL) {
+		return L->E;
 	} else {
-		return 1 + NumeroElementos(L->Prox);
+		return max(L->E, Maior(L->Prox));
 	}
 }
 
@@ -28,21 +31,24 @@ int main() {
 	char op[2]; int e, k;
 	while (scanf("%s", op)>0) {
 		if (op[0] != 'a') {
-			/* teste manual: i e = insere o elemento e; n = calcula o número de elementos */
+			/* teste manual: i e = insere o elemento e; m = busca o maior */
 			if (op[0] == 'i') {
 				scanf("%d", &e); Insere(L,e);
 			} else {
-				printf("%d\n", NumeroElementos(L));
+				printf("%d\n", Maior(L));
 			}
 		} else {
 			/* teste automático */
-			for (int i=1; i<=50000; i++) {
+			int n = 50000;
+			for (int i=n/2; i<=n; i++) {
 				Insere(L,i);
 			}	
-			for (int t=1; t<=100; t++) NumeroElementos(L);
-			printf("%d\n", NumeroElementos(L));
+			for (int i=1; i < n/2; i++) {
+				Insere(L,i);
+			}	
+			for (int t=1; t<=100; t++)  Maior(L);
+			printf("%d\n", Maior(L));
 		}
 	}
-
 	return 0;
 }

@@ -6,12 +6,11 @@ typedef struct No {
 	No * Prox;
 } No;
 
-int NumeroElementos(No * L) { //O~(n)
+int NumeroElementos(No * L) {
 	if (L == NULL) {
 		return 0;
-
 	} else {
-		return 1 + NumeroElementos(L->Prox);
+		return NumeroElementos(L->Prox)+1;
 	}
 }
 
