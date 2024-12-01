@@ -12,30 +12,24 @@ void Insere(No * &L, int e) {
 	novo->E = e; novo->Prox = L; L = novo; 
 }
 
-bool BuscarElemento(No* L, int x) { //O~(n)
-	if (L == NULL) {
-		return false;
-	
-	} else {
-		return (x == L->E) || BuscarElemento(L->Prox, x);
-	}
-}
-
-No * SemRepeticoes(No * L) { //O~(n^2)
-	//Essa função não respeita a ordem da lista original
+No * SemRepeticoes(No * L) {
 	if (L == NULL) {
 		return NULL;
-	
 	} else {
-		if (!BuscarElemento(L->Prox, L->E)) {
-			No* R = (No*) malloc(sizeof(No));
-			R->E = L->E;
-			R->Prox = SemRepeticoes(L->Prox);
-			return R;
-			
-		} else {
-			return SemRepeticoes(L->Prox);
+		No * p; 
+		No * Lr = SemRepeticoes(L->Prox);
+		p = Lr;
+		bool enc = false;
+		while (p != NULL) {
+			if (p->E == L->E) {
+				enc = true; break;
+			}
+			p = p->Prox;
 		}
+		if (! enc) {
+			Insere(Lr, L->E);
+		}
+		return Lr;
 	}
 }
 

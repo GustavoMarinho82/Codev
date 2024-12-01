@@ -7,9 +7,21 @@ typedef struct No {
 	No * Dir;
 } No;
 
+int maiorzinho(int x, int y) {
+	return (x > y) ? x : y;
+}
 
-int Maior(No * T) {
-	/* insert your code here */
+int Maior(No * T) { //O~(n)
+	//Assume que a árvore não é vazia e só contém inteiros positivos
+	if (T == NULL) {
+		return 0;
+	
+	} else {
+		int mE = Maior(T->Esq);
+		int mD = Maior(T->Dir);
+		
+		return maiorzinho(T->E, maiorzinho(mE, mD));
+	}
 }
 
 void Insere(No * &T, int e[], int &i) {

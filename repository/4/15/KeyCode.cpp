@@ -12,31 +12,33 @@ void Insere(No * &L, int e) {
 	novo->E = e; novo->Prox = L; L = novo; 
 }
 
-bool BuscarElemento(No* L, int x) { //O~(n)
+No * Soma2a2(No * L) {
 	if (L == NULL) {
-		return false;
-	
+		return NULL;
 	} else {
-		return (x == L->E) || BuscarElemento(L->Prox, x);
+		No * p; 
+		No * R = Soma2a2(L->Prox);
+		p = L->Prox;
+		while (p != NULL) {
+			Insere(R, L->E + p->E);
+			p = p->Prox;
+		}
+		return R;
 	}
 }
 
-No * SemRepeticoes(No * L) { //O~(n^2)
-	//Essa função não respeita a ordem da lista original
-	if (L == NULL) {
-		return NULL;
-	
-	} else {
-		if (!BuscarElemento(L->Prox, L->E)) {
-			No* R = (No*) malloc(sizeof(No));
-			R->E = L->E;
-			R->Prox = SemRepeticoes(L->Prox);
-			return R;
-			
-		} else {
-			return SemRepeticoes(L->Prox);
-		}
+No * C_Soma2a2(No * L, int q=1) {
+#ifndef CODEV
+	printf("CODEV_BEGIN_EXEC\n");
+#endif
+	No * r;
+	for (int t=0; t<q; t++) {
+		r = Soma2a2(L);
 	}
+#ifndef CODEV
+	printf("CODEV_END_EXEC\n");
+#endif
+	return r;
 }
 
 void Escreve(No * L) {
@@ -51,7 +53,7 @@ void Escreve(No * L) {
 		Lv[i] = p->E; i++; p = p->Prox;
 	}
 	std::sort(Lv,Lv+n);
-	printf("["); for (int i=0; i<n; i++) printf("%d", Lv[i]); printf("]\n");
+	printf("[ "); for (int i=0; i<n; i++) printf("%d ", Lv[i]); printf("]\n");
 	free(Lv);
 }
 
@@ -69,27 +71,19 @@ int main() {
 	setbuf(stdout, NULL); setbuf(stderr, NULL);
 	int n; No * L = NULL; No * Lr;
 	while (scanf("%d", &n)>0) {
-		if (n>-1) {
+		if (n!=-1) {
 			/* lê n, e1, e2, ..., en */
 			for (int i=0; i<n; i++) {
 				int e; scanf("%d", &e);	Insere(L,e); 
 			}
-			Lr = SemRepeticoes(L); Escreve(Lr); Destroi(Lr); Destroi(L);
+			Lr = C_Soma2a2(L); Escreve(Lr); Destroi(Lr); Destroi(L);
 		} else {
 			/* automatic test */
-			if (n==-1) {
-				n = 1000;
-				for (int i=0; i<n; i++) {
-					Insere(L,(i%2==0 ? 2 : 3));
-				}
-				Lr = SemRepeticoes(L); Escreve(Lr); Destroi(Lr); Destroi(L);
-			} else {
-				n = 1000;
-				for (int i=0; i<n; i++) {
-					Insere(L,i);
-				}
-				Lr = SemRepeticoes(L); Escreve(Lr); Destroi(Lr); Destroi(L);
+			n = 1000;
+			for (int i=0; i<n; i++) {
+				Insere(L,i);
 			}
+			Lr = C_Soma2a2(L); Escreve(Lr); Destroi(Lr); Destroi(L);
 		}
 	}
 	return 0;

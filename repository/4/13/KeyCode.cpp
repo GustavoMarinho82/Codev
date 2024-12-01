@@ -7,16 +7,14 @@ typedef struct No {
 	No * Prox;
 } No;
 
-
-void RemoveMaiores(No * &L, int k) { //O~(n)
+void RemoveMaiores(No * &L, int k) {
 	if (L != NULL) {
 		RemoveMaiores(L->Prox, k);
-		
 		if (L->E > k) {
-			No* temp = L;
+			No * p = L;
 			L = L->Prox;
-			free(temp);
-		}
+			free(p);
+		} 
 	}
 }
 

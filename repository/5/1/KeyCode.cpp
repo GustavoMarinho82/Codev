@@ -7,19 +7,19 @@ typedef struct No {
 	No * Dir;
 } No;
 
+int max(int a, int b) {
+	return (a<b ? b : a);
+}
 
-int SomaFolhas(No * T) { //O~(n)
-	if (T == NULL) {
-		return 0;
-		
-	} else {
-		if ((T->Esq == NULL) && (T->Dir == NULL)) {
-			return T->E;
-			
-		} else {
-			return SomaFolhas(T->Esq) + SomaFolhas(T->Dir);
-		}
+int Maior(No * T) {
+	int m = T->E;
+	if (T->Esq != NULL) {
+		m = max(m, Maior(T->Esq));
 	}
+	if (T->Dir != NULL) {
+		m = max(m, Maior(T->Dir));
+	}
+	return m;
 }
 
 void Insere(No * &T, int e[], int &i) {
@@ -65,6 +65,7 @@ void PreencheZigZag(No * &T, int h) {
 	}
 }
 
+
 int main() {
 	setbuf(stdout, NULL); setbuf(stderr, NULL);
 	No * T = NULL; 
@@ -78,17 +79,17 @@ int main() {
 			}
 			int i=0;
 			Insere(T,e,i);
-			printf("%d\n", SomaFolhas(T));
+			printf("%d\n", Maior(T));
 			Destroi(T);
 			n=0;
 		} else {
 			/* teste automático */
-			if (e[n] == -2) {
+			if (e[n]==-2) {
 				PreencheCheia(T, 19);
 			} else {
 				PreencheZigZag(T, 50000);
 			}
-			printf("%d\n", SomaFolhas(T));
+			printf("%d\n", Maior(T));
 			Destroi(T);
 		}
 	}

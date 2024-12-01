@@ -6,32 +6,26 @@ typedef struct No {
 	No * Prox;
 } No;
 
-No* Inverte2(No* L, No* &u) {
+No * Inverte(No * L, No * &u) {
 	if (L == NULL) {
-		u = NULL;
-		return NULL;
-	
+		u = NULL; return NULL;		
 	} else {
-		No* p = Inverte2(L->Prox, u);
-		
-		No* R = (No*) malloc(sizeof(No));
-		R->E = L->E;
-		R->Prox = NULL;
-		
+		No * R = Inverte(L->Prox, u);
+		No * novo = (No *) malloc(sizeof(No));
+		novo->E = L->E; novo->Prox = NULL; 
 		if (u == NULL) {
-			p = R;
+			R = novo;
 		} else {
-			u->Prox = R;
+			u->Prox = novo; 
 		}
-		
-		u = R;
-		return p;
+		u = novo;
+		return R;		
 	}
 }
 
 No * Inverte(No * L) {
-	No* u;
-	return Inverte2(L, u);
+	No * u; 
+	return Inverte(L, u);
 }
 
 void Insere(No * &L, int e) {

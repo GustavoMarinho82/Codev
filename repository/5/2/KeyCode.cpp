@@ -8,17 +8,13 @@ typedef struct No {
 } No;
 
 
-int SomaFolhas(No * T) { //O~(n)
+int SomaFolhas(No * T) {
 	if (T == NULL) {
 		return 0;
-		
+	} else if ((T->Esq == NULL) && (T->Dir == NULL)) {
+		return T->E;
 	} else {
-		if ((T->Esq == NULL) && (T->Dir == NULL)) {
-			return T->E;
-			
-		} else {
-			return SomaFolhas(T->Esq) + SomaFolhas(T->Dir);
-		}
+		return SomaFolhas(T->Esq) + SomaFolhas(T->Dir);
 	}
 }
 
