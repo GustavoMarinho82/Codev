@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <algorithm>
-#include <math.h>
 
 int FIM_ENTRADA = -1000;
 int ENTRADA_AUTOMATICA = -2000;
@@ -12,30 +11,29 @@ typedef struct No {
 	No * Dir;
 } No;
 
-int maior(int x, int y) { //O~(1)
-	return (x > y) ? x : y;
-}
-
-int MaiorSubarvore2(No* T, int &soma) { //O~(n)
+int MaiorSubarvore(No * T, int &soma) {
 	if (T == NULL) {
 		soma = 0;
-		return (int) -INFINITY;
-		
+		return 0;
 	} else {
-		int somaDir, somaEsq;
-		
-		int x = MaiorSubarvore2(T->Dir, somaDir);
-		int y =	MaiorSubarvore2(T->Esq, somaEsq);
-		soma = T->E + somaDir + somaEsq;
-		
-		return maior(soma, maior(x, y));
+		int me, md, s, se, sd;
+		me = MaiorSubarvore(T->Esq, se);
+		md = MaiorSubarvore(T->Dir, sd);
+		soma = se + sd + T->E;
+		int r = soma;
+		if (T->Esq != NULL) {
+			r = std::max(r, me);
+		}
+		if (T->Dir != NULL) {
+			r = std::max(r, md);
+		}
+		return r;
 	}
 }
 
-int MaiorSubarvore(No * T) { //O~(n)
+int MaiorSubarvore(No * T) {
 	int soma;
-	
-	return MaiorSubarvore2(T, soma);
+	return MaiorSubarvore(T, soma);
 }
 
 void Insere(No * &T, int e[], int &i) {
