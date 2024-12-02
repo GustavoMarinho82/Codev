@@ -10,10 +10,24 @@ typedef struct No {
 	No * Dir;
 } No;
 
-void AtualizaAltura(No * T) {
-	/* insert your code here */
+int maior(int x, int y) { //O~(1)
+	return (x > y) ? x : y;
 }
 
+void AtualizaAltura(No * T) { //O~(n)
+	if (T != NULL){
+		AtualizaAltura(T->Esq);
+		AtualizaAltura(T->Dir);
+		
+		T->h = 1;
+		
+		if (T->Esq != NULL)
+			T->h = maior(T->Esq->h + 1, T->h);
+		
+		if (T->Dir != NULL)
+			T->h = maior(T->Dir->h + 1, T->h);
+	}
+}
 
 void C_AtualizaAltura(No * T) {
 #ifndef CODEV

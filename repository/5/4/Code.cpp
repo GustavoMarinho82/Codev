@@ -17,10 +17,24 @@ typedef struct No {
 } No;
 
 
-NoL * ListaNosInternos(No * T) {
-	/* insert your code here */
+void ListaNosInternos2(No * T, NoL* &u) { //O~(n)
+	if (T != NULL) {
+		if ((T->Esq != NULL) || (T->Dir != NULL)) {
+			NoL* L = (NoL*) malloc(sizeof(NoL));
+			L->E = T->E;
+			L->Prox = u;
+			u = L;
+		}
+		ListaNosInternos2(T->Esq, u);
+		ListaNosInternos2(T->Dir, u);
+	}
 }
 
+NoL * ListaNosInternos(No * T) { //O~(n)
+	NoL* u = NULL;
+	ListaNosInternos2(T, u);
+	return u;
+}
 
 NoL * C_ListaNosInternos(No * T) {
 #ifndef CODEV

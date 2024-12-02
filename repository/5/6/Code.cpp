@@ -10,11 +10,18 @@ typedef struct No {
 	No * Dir;
 } No;
 
-
-void AtualizaNivel(No * T) {
-	/* insert your code here */
+void AtualizaNivel2(No* T, int niv_ant) { //O~(n)
+	if (T != NULL) {
+		T->niv = niv_ant + 1;
+		
+		AtualizaNivel2(T->Esq, T->niv);
+		AtualizaNivel2(T->Dir, T->niv);
+	}
 }
 
+void AtualizaNivel(No* T) { //O~(n)
+	AtualizaNivel2(T, 0);
+}
 
 void C_AtualizaNivel(No * T) {
 #ifndef CODEV
