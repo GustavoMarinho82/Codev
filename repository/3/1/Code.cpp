@@ -14,23 +14,41 @@ typedef struct Fila {
 	Pilha P1,P2;
 } Fila;
 
-void Constroi(Fila &F) {
-	/* insert your code here */
-}
-void Enfileira(Fila &F, int x) {
-	/* insert your code here */
+void Constroi(Fila &F) { //O~(1)
+	Constroi(F.P1);
+	Constroi(F.P2);
 }
 
-int Desenfileira(Fila &F) {
-	/* insert your code here */
+void Enfileira(Fila &F, int x) { //O~(1)
+	Empilha(F.P1, x);
 }
 
-int Proximo(Fila &F) {
-	/* insert your code here */
+int Desenfileira(Fila &F) { //O~(2N) = O~(N)
+	while (F.P1.N > 1) //O~(N-1) = O~(N)
+		Empilha(F.P2, Desempilha(F.P1));
+
+	int proximo = Desempilha(F.P1);
+
+	while (F.P2.N > 0) //O~(N)
+		Empilha(F.P1, Desempilha(F.P2));
+
+	return proximo;
+}
+
+int Proximo(Fila &F) { //O~(2N) = O~(N)
+	while (F.P1.N > 0) //O~(N)
+		Empilha(F.P2, Desempilha(F.P1));
+
+	int proximo = Topo(F.P2);
+
+	while (F.P2.N > 0) //O~(N)
+                Empilha(F.P1, Desempilha(F.P2));
+
+	return proximo;
 }
 
 int Tamanho(Fila &F) {
-	/* insert your code here */
+	return(F.P1.N);
 }
 
 int main() {

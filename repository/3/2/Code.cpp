@@ -23,9 +23,25 @@ int Proximo(Fila &F);
 int Tamanho(Fila &F);
 /* fila */
 
-void AlternarPosNeg(int num[], int n) {
+void AlternarPosNeg(int num[], int n) { //O~(n)
 	/* num[0..n-1] são os números entrados pelo usuário */
-	/* insert your code here */
+
+	Fila positivos, negativos;
+	Constroi(positivos);
+	Constroi(negativos);
+
+	for (int i = 0; i < n; i++) {
+		if (num[i] > 0)
+			Enfileira(positivos, num[i]);
+
+		else if (num[i] != 0)
+			Enfileira(negativos, num[i]);
+	}
+
+	while ((Tamanho(positivos) > 0) && (Tamanho(negativos) > 0))
+		printf("%d %d ", Desenfileira(positivos), Desenfileira(negativos));
+
+	printf("\n");
 }
 
 int main() {
