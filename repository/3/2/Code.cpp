@@ -30,7 +30,7 @@ void AlternarPosNeg(int num[], int n) { //O~(n)
 	Constroi(positivos);
 	Constroi(negativos);
 
-	for (int i = 0; i < n; i++) {
+	for (int i = 0; i < n; i++) { //O~(n)
 		if (num[i] > 0)
 			Enfileira(positivos, num[i]);
 

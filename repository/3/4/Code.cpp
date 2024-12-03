@@ -31,8 +31,29 @@ typedef struct Parentese {
 	int tipo;
 } Parentese;
 
-bool VerificaParentizacao(Parentese E[], int n) {
-	/* insert your code here */
+bool VerificaParentizacao(Parentese E[], int n) { //O(n)
+	Pilha P;
+	Constroi(P);
+	
+	for (int i = 0; i < n; i++) { //O(n)
+		if (E[i].desc == '(') {
+			Empilha(P, E[i].tipo);
+		
+		} else {
+			if ((Tamanho(P) == 0) || (E[i].tipo != Desempilha(P))) {
+				Destroi(P);
+				return false;
+			}
+		}
+	}
+	
+	if (Tamanho(P) == 0) {
+		return true;
+	
+	} else {
+		Destroi(P);
+		return false;
+	}
 }
 
 int main() {

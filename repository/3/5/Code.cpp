@@ -26,11 +26,28 @@ int Tamanho(Fila &F);
 /* fila */
 
 
-void LerEscreverKUltimos(int k) {
-	/* leia uma sequência de números (usando scanf()), e ao final (número lido é 0),
-	   escreva os k últimos lidos (usando printf()). 
-	   (Deixe um espaço ao final de cada número impresso.) */
-	/* insert your code here */
+void LerEscreverKUltimos(int k) { //Tempo: O~(n) | Espaço aux: O(k)
+	Fila F;
+	Constroi(F);
+	
+	int buffer;
+	
+	while (scanf("%d", &buffer) > 0) { //O~(n)
+		if (buffer != 0) {
+			if (Tamanho(F) == k) //Se F for ultrapassar o tamanho de k, remove o elemento mais antigo, deixando só os k-1 últimos, na ordem de adição deles
+				Desenfileira(F);
+			
+			Enfileira(F, buffer);
+			
+		} else {
+			break;
+		}
+	}
+	
+	while (Tamanho(F) > 0) //O~(k)
+		printf("%d ", Desenfileira(F));
+	
+	printf("\n");
 }
 
 int main() {
